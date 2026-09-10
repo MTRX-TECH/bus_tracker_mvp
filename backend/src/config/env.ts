@@ -8,7 +8,7 @@ const envSchema = z.object({
   PORT: z.string().default("5000").transform((val) => parseInt(val, 10)),
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
   CLIENT_URL: z.string().default("http://localhost:5173"),
-  MONGODB_URI: z.string().default("mongodb://127.0.0.1:27017/mtrx_bus_tracker"),
+  MONGODB_URI: z.string().default(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/mtrx_bus_tracker"),
   JWT_ACCESS_SECRET: z.string().min(10).default("mtrx_tech_super_secure_access_secret_key_2026_maran_v"),
   JWT_REFRESH_SECRET: z.string().min(10).default("mtrx_tech_super_secure_refresh_secret_key_2026_maran_v"),
   JWT_ACCESS_EXPIRE: z.string().default("15m"),
