@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: mtrx-bus-tracker-backend
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        fromDatabase:
+          name: mtrx-atlas-free
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+
+staticSites:
+  - name: mtrx-bus-tracker-frontend
+    buildCommand: npm --workspace=shared run build && npm --workspace=frontend run build
+    publishPath: ./frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: mtrx-bus-tracker-backend
+          property: url
+          suffix: "/api"

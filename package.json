@@ -1,0 +1,26 @@
+{
+  "name": "mtrx-bus-tracker-monorepo",
+  "version": "1.0.0",
+  "description": "RIT Bus Tracker SaaS Platform — Developed by RIT",
+  "author": " <CEO, RIT>",
+  "license": "ISC",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "build:shared": "npm run build --workspace=shared",
+    "build:backend": "npm run build --workspace=backend",
+    "build:frontend": "npm run build --workspace=frontend",
+    "build:all": "npm run build:shared && npm run build:backend && npm run build:frontend",
+    "test:backend": "npm run test --workspace=backend",
+    "lint:all": "npm run lint --workspaces"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
