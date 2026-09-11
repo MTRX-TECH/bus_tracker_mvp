@@ -134,21 +134,21 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ isGuest = fa
     <div className="space-y-6 relative">
       {/* Guest / Public Passenger View Mode Banner */}
       {isGuest && (
-        <div className="glass-panel p-4 sm:p-5 rounded-2xl border-2 border-gold-500/60 bg-gradient-to-r from-zinc-900 via-zinc-950 to-amber-950/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-2xl">
+        <div className="bg-white border border-gray-200 shadow-sm rounded-xl p-4 sm:p-5 rounded-2xl border-2 border-gray-200 bg-gradient-to-r from-white via-zinc-950 to-gray-100/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-md">
           <div className="flex items-center gap-3.5">
-            <div className="p-3.5 rounded-2xl bg-gold-500/10 text-gold-400 border border-gold-500/40 shadow-inner shrink-0">
-              <Compass size={28} className="animate-spin-slow text-gold-400" />
+            <div className="p-3.5 rounded-2xl bg-blue-600 text-blue-600 border border-gray-200 shadow-inner shrink-0">
+              <Compass size={28} className="animate-spin-slow text-blue-600" />
             </div>
             <div>
-              <h3 className="text-base sm:text-lg font-extrabold text-white tracking-wide">🎓 Student & Passenger Real-Time Transit View</h3>
-              <p className="text-xs text-silver-300 leading-relaxed mt-0.5">No login required! Streaming dynamic live GPS telemetry and stop arrival predictions across campus routes.</p>
+              <h3 className="text-base sm:text-lg font-extrabold text-gray-900 tracking-wide">🎓 Student & Passenger Real-Time Transit View</h3>
+              <p className="text-xs text-gray-600 leading-relaxed mt-0.5">No login required! Streaming dynamic live GPS telemetry and stop arrival predictions across campus routes.</p>
             </div>
           </div>
           {onExitGuest && (
             <button
               type="button"
               onClick={onExitGuest}
-              className="px-5 py-3 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 hover:brightness-110 text-black font-black text-xs uppercase tracking-widest shadow-gold cursor-pointer shrink-0 flex items-center gap-2 transform active:scale-95 transition-all"
+              className="px-5 py-3 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 hover:brightness-110 text-black font-black text-xs uppercase tracking-widest shadow-sm cursor-pointer shrink-0 flex items-center gap-2 transform active:scale-95 transition-all"
             >
               🔐 Staff & Admin SSO Login ➡️
             </button>
@@ -158,36 +158,36 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ isGuest = fa
 
       {/* High-Priority Floating Proximity Arrival Toast */}
       {proximityMessage && (
-        <div className="fixed bottom-6 right-6 z-50 max-w-md bg-gradient-to-r from-zinc-900 via-zinc-950 to-amber-950/90 border-2 border-gold-400 text-white p-5 rounded-2xl shadow-2xl shadow-gold-500/20 backdrop-blur-xl animate-in fade-in slide-in-from-bottom-5 duration-300">
+        <div className="fixed bottom-6 right-6 z-50 max-w-md bg-gradient-to-r from-white via-zinc-950 to-gray-100/90 border-2 border-gold-400 text-gray-900 p-5 rounded-2xl shadow-md shadow-sm backdrop-blur-xl animate-in fade-in slide-in-from-bottom-5 duration-300">
           <div className="flex items-start gap-4">
-            <div className="p-3 bg-gold-500/20 text-gold-400 rounded-xl animate-bounce shrink-0">
+            <div className="p-3 bg-blue-600 text-blue-600 rounded-xl animate-bounce shrink-0">
               <Bell size={24} />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-gold-400 flex items-center gap-1">
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-blue-600 flex items-center gap-1">
                   <Volume2 size={13} className="animate-pulse" /> Live Telemetry Alarm
                 </span>
                 <button
                   onClick={() => setProximityMessage(null)}
-                  className="text-[11px] text-zinc-400 hover:text-white bg-zinc-800 px-2 py-0.5 rounded"
+                  className="text-[11px] text-zinc-400 hover:text-gray-900 bg-gray-100 px-2 py-0.5 rounded"
                 >
                   Dismiss
                 </button>
               </div>
-              <p className="text-sm font-bold text-white mt-1 leading-relaxed">{proximityMessage}</p>
+              <p className="text-sm font-bold text-gray-900 mt-1 leading-relaxed">{proximityMessage}</p>
             </div>
           </div>
         </div>
       )}
 
       {/* Student Greeting Banner */}
-      <GlassCard className="bg-gradient-to-r from-zinc-900 via-zinc-900 to-amber-950/20 border-gold-500/30">
+      <GlassCard className="bg-gradient-to-r from-white via-gray-50 to-gray-100/20 border-gray-200">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <span className="text-[11px] font-bold uppercase tracking-wider text-gold-400">🎓 Collegiate Transit Tracker</span>
-            <h1 className="text-2xl font-bold text-white mt-0.5">Live Route & ETA Prediction</h1>
-            <p className="text-xs text-silver-300">Tracking buses for: <strong className="text-white">{user?.orgName || (isGuest ? "All Active Campus Fleets (Public View)" : "Institutional Fleet")}</strong></p>
+            <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600">🎓 Collegiate Transit Tracker</span>
+            <h1 className="text-2xl font-bold text-gray-900 mt-0.5">Live Route & ETA Prediction</h1>
+            <p className="text-xs text-gray-600">Tracking buses for: <strong className="text-gray-900">{user?.orgName || (isGuest ? "All Active Campus Fleets (Public View)" : "Institutional Fleet")}</strong></p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <button
@@ -199,32 +199,32 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ isGuest = fa
               }}
               className={`px-4 py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 transition-all shadow-lg ${
                 proximityEnabled
-                  ? "bg-gradient-to-r from-emerald-600 to-emerald-700 text-white border border-emerald-400/50 animate-pulse"
+                  ? "bg-gradient-to-r from-emerald-600 to-emerald-700 text-gray-900 border border-emerald-400/50 animate-pulse"
                   : "bg-gradient-to-r from-amber-500 to-gold-500 text-black font-extrabold hover:brightness-110"
               }`}
             >
               <Bell size={16} className={proximityEnabled ? "animate-bounce" : ""} />
               <span>{proximityEnabled ? "Proximity Radar Active (Armed)" : "Arm Proximity Arrival Alarm"}</span>
             </button>
-            <div className="px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs flex items-center gap-2">
+            <div className="px-3.5 py-2.5 rounded-xl bg-gray-50 border border-gray-200 text-xs flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-              <span className="text-silver-300 font-semibold">{mergedTrips.length} Active College Buses Online</span>
+              <span className="text-gray-600 font-semibold">{mergedTrips.length} Active College Buses Online</span>
             </div>
           </div>
         </div>
 
         {/* Proximity Alarm Stop Selector Bar */}
         {proximityEnabled && (
-          <div className="mt-4 pt-3 border-t border-zinc-800/80 flex flex-wrap items-center gap-3 text-xs bg-zinc-950/50 p-3 rounded-xl border border-amber-500/20">
-            <MapPin size={15} className="text-gold-400 shrink-0" />
-            <span className="text-silver-300 font-semibold">Select Boarding Stop for Proximity Alert Trigger:</span>
+          <div className="mt-4 pt-3 border-t border-gray-200/80 flex flex-wrap items-center gap-3 text-xs bg-zinc-950/50 p-3 rounded-xl border border-amber-500/20">
+            <MapPin size={15} className="text-blue-600 shrink-0" />
+            <span className="text-gray-600 font-semibold">Select Boarding Stop for Proximity Alert Trigger:</span>
             <select
               value={selectedStop?.name || ""}
               onChange={(e) => {
                 const stop = defaultStops.find((s: any) => s.name === e.target.value);
                 setSelectedStop(stop || null);
               }}
-              className="bg-zinc-900 text-gold-400 border border-gold-500/40 rounded-lg px-3 py-1 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-gold-500"
+              className="bg-gray-50 text-blue-600 border border-gray-200 rounded-lg px-3 py-1 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-gold-500"
             >
               <option value="">-- Live Device GPS / Campus Center --</option>
               {defaultStops.map((stop: any, i: number) => (
@@ -270,9 +270,9 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ isGuest = fa
         <div>
           <GlassCard title="Active Bus Schedules & ETA" subtitle="Select your preferred morning pickup route">
             {loading ? (
-              <p className="text-xs text-gray-400 py-6 text-center">Checking active bus sensors...</p>
+              <p className="text-xs text-gray-600 py-6 text-center">Checking active bus sensors...</p>
             ) : mergedTrips.length === 0 ? (
-              <div className="text-center py-8 text-silver-400 text-xs">
+              <div className="text-center py-8 text-gray-500 text-xs">
                 <Bus size={32} className="mx-auto mb-2 text-gray-600" />
                 <p>No active bus trips currently live on road.</p>
                 <p className="mt-1 text-[11px]">Drivers scan QR code before leaving terminal.</p>
@@ -293,48 +293,48 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ isGuest = fa
                     <div
                       key={trip._id}
                       className={`p-4 rounded-xl border transition-all ${
-                        isFav ? "bg-amber-950/20 border-gold-500/60 shadow-lg shadow-gold-500/10" : "bg-zinc-900/80 border-zinc-800"
+                        isFav ? "bg-amber-950/20 border-gray-200 shadow-lg shadow-sm" : "bg-gray-50 border-gray-200"
                       }`}
                     >
-                      <div className="flex items-center justify-between pb-2 border-b border-zinc-800/60">
+                      <div className="flex items-center justify-between pb-2 border-b border-gray-200/60">
                         <div className="flex items-center gap-2">
-                          <Bus className="text-gold-400" size={18} />
-                          <span className="font-bold text-white text-base">{busNum}</span>
+                          <Bus className="text-blue-600" size={18} />
+                          <span className="font-bold text-gray-900 text-base">{busNum}</span>
                           {trip.etaInfo?.isDelayed && (
                             <span className="px-2 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-400 font-bold">Delayed</span>
                           )}
                         </div>
                         <button
                           onClick={() => setFavoriteBusId(isFav ? null : trip._id)}
-                          className="p-1 text-gold-400 hover:scale-110 transition-transform"
+                          className="p-1 text-blue-600 hover:scale-110 transition-transform"
                           title="Bookmark Favorite Bus"
                         >
                           <Heart size={18} fill={isFav ? "#D4AF37" : "transparent"} />
                         </button>
                       </div>
 
-                      <div className="my-3 space-y-2 text-xs text-silver-300">
+                      <div className="my-3 space-y-2 text-xs text-gray-600">
                         <p className="flex items-center justify-between">
-                          <span className="text-gray-400">Route:</span>
-                          <strong className="text-white truncate max-w-[170px]">{trip.routeId?.name || "Rajapalayam Route"}</strong>
+                          <span className="text-gray-600">Route:</span>
+                          <strong className="text-gray-900 truncate max-w-[170px]">{trip.routeId?.name || "Rajapalayam Route"}</strong>
                         </p>
                         <p className="flex items-center justify-between">
-                          <span className="text-gray-400">Distance to Target:</span>
+                          <span className="text-gray-600">Distance to Target:</span>
                           <strong className="text-gold-300 font-mono font-semibold">{distKm} km away</strong>
                         </p>
                         <p className="flex items-center justify-between">
-                          <span className="text-gray-400">Next Stop ETA:</span>
+                          <span className="text-gray-600">Next Stop ETA:</span>
                           <span className="text-emerald-400 font-mono font-bold text-sm flex items-center gap-1">
                             <Clock size={13} /> ~{etaMins} Minutes
                           </span>
                         </p>
                         <p className="flex items-center justify-between">
-                          <span className="text-gray-400">Live Speed:</span>
-                          <strong className="text-white">{trip.speed || 0} km/h</strong>
+                          <span className="text-gray-600">Live Speed:</span>
+                          <strong className="text-gray-900">{trip.speed || 0} km/h</strong>
                         </p>
                         <p className="flex items-center justify-between">
-                          <span className="text-gray-400">Driver Contact:</span>
-                          <a href={`tel:${driverPhone}`} className="text-gold-400 hover:underline inline-flex items-center gap-1 font-medium">
+                          <span className="text-gray-600">Driver Contact:</span>
+                          <a href={`tel:${driverPhone}`} className="text-blue-600 hover:underline inline-flex items-center gap-1 font-medium">
                             <Phone size={11} /> {driverName}
                           </a>
                         </p>

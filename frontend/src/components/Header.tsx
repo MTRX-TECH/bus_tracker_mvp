@@ -65,21 +65,21 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full glass-panel border-b border-zinc-800/80 px-4 md:px-8 py-3.5 transition-all">
+      <header className="sticky top-0 z-40 w-full bg-white border border-gray-200 shadow-sm rounded-xl border-b border-gray-200/80 px-4 md:px-8 py-3.5 transition-all">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo & Branding */}
           <div className="flex items-center gap-3">
-            <img src="/rit-logo.png" alt="MTRX Brand Logo" className="w-11 h-11 object-cover rounded-2xl overflow-hidden shrink-0 border border-gold-500/40 shadow-lg shadow-gold-500/20 bg-black/50" />
+            
             <div>
-              <h1 className="text-lg md:text-xl font-bold tracking-wider gold-gradient-text">RIT Bus Tracker</h1>
-              <p className="text-[10px] text-silver-400 tracking-[0.2em] uppercase font-medium">Developed by RIT</p>
+              <h1 className="text-lg md:text-xl font-bold tracking-wider text-blue-700 font-bold">RIT Bus Tracker</h1>
+              <p className="text-[10px] text-gray-500 tracking-[0.2em] uppercase font-medium">Developed by RIT</p>
             </div>
           </div>
 
           {/* Navigation & Persistent About Team Trigger */}
           <div className="flex items-center gap-2.5 sm:gap-4 md:gap-5">
             {/* Online socket streaming indicator */}
-            <div className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs text-silver-300">
+            <div className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-full bg-gray-50 border border-gray-200 text-xs text-gray-600">
               <span className={`w-2 h-2 rounded-full ${isConnected ? "bg-emerald-500 animate-pulse" : "bg-rose-500"}`} />
               <span>{isConnected ? "GPS Sync Online" : "Reconnecting..."}</span>
             </div>
@@ -87,7 +87,7 @@ export const Header: React.FC = () => {
             {/* Persistent Global "About Team" Button - Works Everywhere! */}
             <button
               onClick={() => setIsTeamModalOpen(true)}
-              className="px-3.5 py-1.5 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500 hover:text-black font-medium text-xs sm:text-sm transition-all shadow-sm flex items-center gap-1.5 duration-200"
+              className="px-3.5 py-1.5 rounded-lg bg-blue-600 border border-gray-200 text-blue-600 hover:bg-blue-600 hover:text-black font-medium text-xs sm:text-sm transition-all shadow-sm flex items-center gap-1.5 duration-200"
             >
               <Users size={15} />
               <span className="hidden xs:inline">About us</span>
@@ -100,14 +100,14 @@ export const Header: React.FC = () => {
                   onClick={() => setIsNotifOpen(!isNotifOpen)}
                   className={`p-2 rounded-lg transition-all border relative ${
                     unreadCount > 0
-                      ? "bg-amber-500/10 border-amber-500/40 text-gold-400 hover:bg-amber-500/20"
-                      : "bg-zinc-800/80 border-zinc-700/50 text-gray-400 hover:text-white"
+                      ? "bg-amber-500/10 border-amber-500/40 text-blue-600 hover:bg-amber-500/20"
+                      : "bg-gray-100 border-gray-300/50 text-gray-600 hover:text-gray-900"
                   }`}
                   title="Notification & Alert Center"
                 >
                   <Bell size={18} className={unreadCount > 0 ? "animate-bounce" : ""} />
                   {unreadCount > 0 && (
-                    <span className="absolute -top-1.5 -right-1.5 bg-rose-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border border-black shadow-lg">
+                    <span className="absolute -top-1.5 -right-1.5 bg-rose-600 text-gray-900 text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border border-black shadow-lg">
                       {unreadCount > 9 ? "9+" : unreadCount}
                     </span>
                   )}
@@ -115,16 +115,16 @@ export const Header: React.FC = () => {
 
                 {/* Glassmorphic Luxury Dropdown Menu */}
                 {isNotifOpen && (
-                  <div className="absolute right-0 mt-3 w-80 sm:w-96 rounded-2xl bg-zinc-950/95 border border-amber-500/30 shadow-2xl backdrop-blur-xl z-50 overflow-hidden divide-y divide-zinc-800 animate-in fade-in zoom-in-95 duration-150">
-                    <div className="p-4 flex items-center justify-between bg-gradient-to-r from-zinc-900 via-zinc-900/80 to-zinc-900 text-white">
+                  <div className="absolute right-0 mt-3 w-80 sm:w-96 rounded-2xl bg-zinc-950/95 border border-amber-500/30 shadow-md backdrop-blur-xl z-50 overflow-hidden divide-y divide-zinc-800 animate-in fade-in zoom-in-95 duration-150">
+                    <div className="p-4 flex items-center justify-between bg-gradient-to-r from-white via-gray-50/80 to-gray-50 text-gray-900">
                       <div className="flex items-center gap-2">
-                        <Bell size={16} className="text-gold-400" />
-                        <h3 className="font-bold text-sm text-white tracking-wide">RIT ALERT CENTER</h3>
+                        <Bell size={16} className="text-blue-600" />
+                        <h3 className="font-bold text-sm text-gray-900 tracking-wide">RIT ALERT CENTER</h3>
                       </div>
                       {unreadCount > 0 && (
                         <button
                           onClick={handleMarkAllRead}
-                          className="text-[11px] font-medium text-gold-400 hover:text-gold-300 flex items-center gap-1 bg-zinc-800/80 px-2 py-1 rounded transition-colors"
+                          className="text-[11px] font-medium text-blue-600 hover:text-gold-300 flex items-center gap-1 bg-gray-100 px-2 py-1 rounded transition-colors"
                         >
                           <CheckCircle size={12} />
                           <span>Acknowledge All</span>
@@ -134,7 +134,7 @@ export const Header: React.FC = () => {
 
                     <div className="max-h-[360px] overflow-y-auto divide-y divide-zinc-900/80">
                       {notifications.length === 0 ? (
-                        <div className="p-6 text-center text-silver-400 text-xs">
+                        <div className="p-6 text-center text-gray-500 text-xs">
                           No active emergency alarms or transit warnings.
                         </div>
                       ) : (
@@ -149,7 +149,7 @@ export const Header: React.FC = () => {
                                   ? isEmergency
                                     ? "bg-rose-950/40 hover:bg-rose-950/60 border-l-4 border-rose-500"
                                     : "bg-amber-950/20 hover:bg-amber-950/30 border-l-4 border-amber-500"
-                                  : "bg-zinc-900/30 hover:bg-zinc-900/60 text-zinc-400"
+                                  : "bg-gray-50 hover:bg-gray-50 text-zinc-400"
                               }`}
                             >
                               <div className="shrink-0 mt-0.5">
@@ -158,12 +158,12 @@ export const Header: React.FC = () => {
                                 ) : n.type === "OFFLINE_MID_TRIP" ? (
                                   <Radio size={18} className="text-amber-500" />
                                 ) : (
-                                  <Bell size={18} className="text-silver-400" />
+                                  <Bell size={18} className="text-gray-500" />
                                 )}
                               </div>
                               <div className="flex-1 min-w-0">
                                 <div className="flex items-center justify-between gap-1 mb-1">
-                                  <span className={`text-xs font-bold truncate ${isEmergency ? "text-rose-300" : "text-white"}`}>
+                                  <span className={`text-xs font-bold truncate ${isEmergency ? "text-rose-300" : "text-gray-900"}`}>
                                     {n.title}
                                   </span>
                                   <span className="text-[10px] text-zinc-500 shrink-0 flex items-center gap-0.5">
@@ -171,7 +171,7 @@ export const Header: React.FC = () => {
                                     {new Date(n.createdAt || Date.now()).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                                   </span>
                                 </div>
-                                <p className="text-xs text-silver-300 line-clamp-3 leading-relaxed">{n.message}</p>
+                                <p className="text-xs text-gray-600 line-clamp-3 leading-relaxed">{n.message}</p>
                               </div>
                             </div>
                           );
@@ -179,7 +179,7 @@ export const Header: React.FC = () => {
                       )}
                     </div>
 
-                    <div className="p-2.5 bg-zinc-900/50 text-center text-[10px] text-zinc-500 font-mono uppercase tracking-widest">
+                    <div className="p-2.5 bg-gray-50 text-center text-[10px] text-zinc-500 font-mono uppercase tracking-widest">
                       Real-Time Safety Telemetry Engine Active
                     </div>
                   </div>
@@ -189,21 +189,21 @@ export const Header: React.FC = () => {
 
             {/* Logged in User actions */}
             {user && (
-              <div className="flex items-center gap-3 pl-2 border-l border-zinc-800">
+              <div className="flex items-center gap-3 pl-2 border-l border-gray-200">
                 <div className="hidden lg:flex flex-col text-right">
-                  <span className="text-xs font-semibold text-white truncate max-w-[150px]">{user.name}</span>
-                  <span className="text-[10px] text-gold-400 uppercase tracking-wider">{user.role}</span>
+                  <span className="text-xs font-semibold text-gray-900 truncate max-w-[150px]">{user.name}</span>
+                  <span className="text-[10px] text-blue-600 uppercase tracking-wider">{user.role}</span>
                 </div>
                 <button
                   onClick={() => setIsPasswordModalOpen(true)}
-                  className="p-2 rounded-lg bg-zinc-800/80 hover:bg-gold-500/20 hover:text-gold-400 hover:border hover:border-gold-500/30 transition-all text-gray-400"
+                  className="p-2 rounded-lg bg-gray-100 hover:bg-blue-600 hover:text-blue-600 hover:border hover:border-gray-200 transition-all text-gray-600"
                   title="Change Security Password"
                 >
                   <Key size={17} />
                 </button>
                 <button
                   onClick={() => logout()}
-                  className="p-2 rounded-lg bg-zinc-800/80 hover:bg-rose-500/20 hover:text-rose-400 hover:border hover:border-rose-500/30 transition-all text-gray-400"
+                  className="p-2 rounded-lg bg-gray-100 hover:bg-rose-500/20 hover:text-rose-400 hover:border hover:border-rose-500/30 transition-all text-gray-600"
                   title="Logout session"
                 >
                   <LogOut size={17} />
@@ -216,9 +216,9 @@ export const Header: React.FC = () => {
 
       {/* Emergency SOS Banner Broadcast Overlay */}
       {emergencyAlert && (
-        <div className="bg-gradient-to-r from-rose-700 via-rose-600 to-rose-700 border-b-2 border-rose-400 text-white px-4 py-3 shadow-2xl flex flex-wrap items-center justify-between gap-3 z-50 animate-pulse">
+        <div className="bg-gradient-to-r from-rose-700 via-rose-600 to-rose-700 border-b-2 border-rose-400 text-gray-900 px-4 py-3 shadow-md flex flex-wrap items-center justify-between gap-3 z-50 animate-pulse">
           <div className="flex items-center gap-3 text-sm md:text-base font-bold tracking-wide">
-            <div className="p-2 bg-black/40 rounded-lg text-amber-300 animate-bounce">
+            <div className="p-2 bg-white rounded-lg text-amber-300 animate-bounce">
               <AlertTriangle size={22} />
             </div>
             <div>
@@ -235,7 +235,7 @@ export const Header: React.FC = () => {
           </div>
           <button
             onClick={dismissEmergency}
-            className="px-4 py-2 bg-black/60 hover:bg-black/90 text-amber-400 border border-amber-400/50 rounded-lg font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:scale-105"
+            className="px-4 py-2 bg-white hover:bg-white text-amber-400 border border-amber-400/50 rounded-lg font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:scale-105"
           >
             Acknowledge & Silence Alarm
           </button>

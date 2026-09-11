@@ -57,7 +57,7 @@ export const MapView: React.FC<MapViewProps> = ({
   height = "450px",
 }) => {
   return (
-    <div style={{ height }} className="w-full rounded-xl overflow-hidden border border-gold-500/20 shadow-2xl relative z-0">
+    <div style={{ height }} className="w-full rounded-xl overflow-hidden border border-gray-200 shadow-md relative z-0">
       <MapContainer center={[centerLat, centerLng]} zoom={zoom} scrollWheelZoom={true} style={{ height: "100%", width: "100%" }}>
         {/* Zero-cost OpenStreetMap tile servers with CartoDB Dark Matter luxury styling */}
         <TileLayer
@@ -76,8 +76,8 @@ export const MapView: React.FC<MapViewProps> = ({
           <Marker key={`stop-${index}`} position={[stop.latitude, stop.longitude]} icon={stopIcon}>
             <Popup>
               <div className="text-xs">
-                <span className="font-bold text-gold-400">Stop #{index + 1}:</span>
-                <p className="text-white font-medium text-sm mt-0.5">{stop.name}</p>
+                <span className="font-bold text-blue-600">Stop #{index + 1}:</span>
+                <p className="text-gray-900 font-medium text-sm mt-0.5">{stop.name}</p>
               </div>
             </Popup>
           </Marker>
@@ -92,13 +92,13 @@ export const MapView: React.FC<MapViewProps> = ({
           >
             <Popup>
               <div className="min-w-[180px] p-1">
-                <h4 className="font-bold text-gold-400 text-sm border-b border-zinc-700 pb-1">{bus.busNumber}</h4>
-                <div className="mt-2 text-xs text-silver-300 space-y-1">
-                  <p><span className="text-gray-400">Speed:</span> <strong className="text-white">{bus.speed || 0} km/h</strong></p>
+                <h4 className="font-bold text-blue-600 text-sm border-b border-gray-300 pb-1">{bus.busNumber}</h4>
+                <div className="mt-2 text-xs text-gray-600 space-y-1">
+                  <p><span className="text-gray-600">Speed:</span> <strong className="text-gray-900">{bus.speed || 0} km/h</strong></p>
                   {bus.etaMins !== undefined && (
-                    <p><span className="text-gray-400">Estimated ETA:</span> <strong className="text-emerald-400">{bus.etaMins} mins</strong></p>
+                    <p><span className="text-gray-600">Estimated ETA:</span> <strong className="text-emerald-400">{bus.etaMins} mins</strong></p>
                   )}
-                  <p><span className="text-gray-400">Status:</span> {bus.isDelayed ? <span className="text-rose-400 font-bold">Delayed</span> : <span className="text-gold-400 font-medium">On Schedule</span>}</p>
+                  <p><span className="text-gray-600">Status:</span> {bus.isDelayed ? <span className="text-rose-400 font-bold">Delayed</span> : <span className="text-blue-600 font-medium">On Schedule</span>}</p>
                 </div>
               </div>
             </Popup>

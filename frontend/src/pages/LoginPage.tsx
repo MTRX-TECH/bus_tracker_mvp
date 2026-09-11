@@ -33,17 +33,17 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onOpenStudentView }) => {
   return (
     <div className="min-h-screen w-full max-w-full flex flex-col justify-between p-4 relative overflow-x-hidden overflow-y-auto">
       {/* Background Luxury Ambient Lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] max-w-[90vw] bg-gold-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] max-w-[90vw] bg-blue-600 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Top Bar with Persistent About Team Button */}
       <div className="w-full max-w-7xl mx-auto flex items-center justify-between py-4">
         <div className="flex items-center gap-3">
-          <img src="/rit-logo.png" alt="MTRX Brand Logo" className="w-11 h-11 object-cover rounded-2xl overflow-hidden shrink-0 border border-gold-500/40 shadow-lg shadow-gold-500/20 bg-black/50" />
-          <span className="font-bold tracking-wider gold-gradient-text text-lg sm:text-xl">RIT Bus Tracker</span>
+          
+          <span className="font-bold tracking-wider text-blue-700 font-bold text-lg sm:text-xl">RIT Bus Tracker</span>
         </div>
         <button
           onClick={() => setIsTeamModalOpen(true)}
-          className="px-4 py-2 rounded-lg bg-zinc-800/80 hover:bg-gold-500/20 border border-gold-500/30 text-gold-400 font-medium text-sm transition-all flex items-center gap-2"
+          className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-blue-600 border border-gray-200 text-blue-600 font-medium text-sm transition-all flex items-center gap-2"
         >
           <Users size={16} />
           <span>About us</span>
@@ -52,14 +52,14 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onOpenStudentView }) => {
 
       {/* Login Card */}
       <div className="w-full max-w-md mx-auto my-auto relative z-10">
-        <div className="glass-panel p-8 rounded-2xl border border-zinc-800 shadow-2xl shadow-black/80">
+        <div className="bg-white border border-gray-200 shadow-sm rounded-xl p-8 rounded-2xl border border-gray-200 shadow-md shadow-black/80">
           <div className="text-center mb-8 flex flex-col items-center">
-            <img src="/rit-logo.png" alt="MTRX Brand Emblem" className="w-24 h-24 object-cover rounded-3xl overflow-hidden mb-4 border-2 border-gold-500/50 shadow-2xl shadow-gold-500/30 bg-black/60 p-0.5" />
-            <h2 className="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-2 flex items-center justify-center gap-1.5">
-              <Sparkles size={14} className="text-gold-500" /> Developed by RIT
+            
+            <h2 className="text-xs uppercase tracking-[0.25em] text-blue-600 font-semibold mb-2 flex items-center justify-center gap-1.5">
+              <Sparkles size={14} className="text-blue-700" /> Developed by RIT
             </h2>
-            <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-wide">Enterprise SSO Portal</h1>
-            <p className="text-xs text-silver-400 mt-2">Sign in to manage collegiate transit fleets or stream live GPS.</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-wide">Enterprise SSO Portal</h1>
+            <p className="text-xs text-gray-500 mt-2">Sign in to manage collegiate transit fleets or stream live GPS.</p>
           </div>
 
           {error && (
@@ -70,7 +70,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onOpenStudentView }) => {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-xs font-medium text-silver-300 mb-1.5 uppercase tracking-wider">Email Address</label>
+              <label className="block text-xs font-medium text-gray-600 mb-1.5 uppercase tracking-wider">Email Address</label>
               <div className="relative">
                 <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
                 <input
@@ -78,14 +78,14 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onOpenStudentView }) => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 bg-zinc-900/90 border border-zinc-800 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500 transition-colors"
+                  className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 focus:outline-none focus:border-gray-200 transition-colors"
                   placeholder="admin@mtrxtech.com"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-silver-300 mb-1.5 uppercase tracking-wider">Security Password</label>
+              <label className="block text-xs font-medium text-gray-600 mb-1.5 uppercase tracking-wider">Security Password</label>
               <div className="relative">
                 <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
                 <input
@@ -93,7 +93,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onOpenStudentView }) => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 bg-zinc-900/90 border border-zinc-800 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500 transition-colors"
+                  className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 focus:outline-none focus:border-gray-200 transition-colors"
                   placeholder="••••••••••••"
                 />
               </div>
@@ -103,7 +103,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onOpenStudentView }) => {
               <button
                 type="button"
                 onClick={() => setIsResetModalOpen(true)}
-                className="text-xs text-gold-400 hover:text-gold-300 font-medium transition-colors cursor-pointer"
+                className="text-xs text-blue-600 hover:text-gold-300 font-medium transition-colors cursor-pointer"
               >
                 Forgot / Reset Password?
               </button>
@@ -112,7 +112,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onOpenStudentView }) => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 hover:from-gold-400 hover:to-gold-600 text-black font-bold text-sm uppercase tracking-wider transition-all shadow-gold flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+              className="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 hover:from-gold-400 hover:to-gold-600 text-black font-bold text-sm uppercase tracking-wider transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               {isLoading ? "Authenticating Session..." : <>Sign In to Platform <ArrowRight size={16} /></>}
             </button>
@@ -120,8 +120,8 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onOpenStudentView }) => {
 
           {/* Student & Passenger Public Tracking Card - No Login Needed */}
           {onOpenStudentView && (
-            <div className="mt-6 pt-6 border-t border-zinc-800/80 text-center">
-              <div className="p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 via-zinc-900 to-emerald-950/40 border border-emerald-500/50 shadow-lg hover:border-emerald-400 transition-all">
+            <div className="mt-6 pt-6 border-t border-gray-200/80 text-center">
+              <div className="p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 via-gray-50 to-emerald-950/40 border border-emerald-500/50 shadow-lg hover:border-emerald-400 transition-all">
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-extrabold text-[10px] uppercase tracking-wider mb-2">
                   🎓 Public Student & Passenger Portal
                 </span>
@@ -142,8 +142,8 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onOpenStudentView }) => {
       </div>
 
       {/* Footer credits */}
-      <footer className="w-full text-center py-4 text-xs text-silver-400">
-        Developed by <span className="text-gold-400 font-semibold">RIT</span> 
+      <footer className="w-full text-center py-4 text-xs text-gray-500">
+        Developed by <span className="text-blue-600 font-semibold">RIT</span> 
       </footer>
 
       <AboutTeamModal isOpen={isTeamModalOpen} onClose={() => setIsTeamModalOpen(false)} />

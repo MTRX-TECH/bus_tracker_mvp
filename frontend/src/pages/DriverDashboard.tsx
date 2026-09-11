@@ -336,18 +336,18 @@ export const DriverDashboard: React.FC = () => {
   return (
     <div className="max-w-md mx-auto space-y-5 py-2 relative">
       {/* Mobile PWA Header */}
-      <GlassCard className="text-center bg-gradient-to-b from-zinc-900 to-black border-gold-500/30">
-        <span className="text-[11px] font-semibold text-gold-400 uppercase tracking-[0.2em]">Driver Mobile PWA Console</span>
-        <h1 className="text-xl font-bold text-white mt-1">{user?.name || "Professional Transit Driver"}</h1>
-        <p className="text-xs text-silver-400">Assigned Organization: {user?.orgName || "Institutional Fleet"}</p>
+      <GlassCard className="text-center bg-gradient-to-b from-white to-black border-gray-200">
+        <span className="text-[11px] font-semibold text-blue-600 uppercase tracking-[0.2em]">Driver Mobile PWA Console</span>
+        <h1 className="text-xl font-bold text-gray-900 mt-1">{user?.name || "Professional Transit Driver"}</h1>
+        <p className="text-xs text-gray-500">Assigned Organization: {user?.orgName || "Institutional Fleet"}</p>
 
         {/* Signal & Offline Cache Indicators */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mt-4 pt-4 border-t border-zinc-800/80 text-xs">
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-4 pt-4 border-t border-gray-200/80 text-xs">
           <div className="flex items-center gap-1.5 text-emerald-400 font-medium bg-emerald-950/40 px-2.5 py-1 rounded-full border border-emerald-500/30">
             <Radio size={13} className="animate-pulse" />
             <span>{isConnected ? "Socket Sync On" : "Reconnecting..."}</span>
           </div>
-          <div className="flex items-center gap-1.5 text-gold-400 font-medium bg-amber-950/40 px-2.5 py-1 rounded-full border border-gold-500/30">
+          <div className="flex items-center gap-1.5 text-blue-600 font-medium bg-amber-950/40 px-2.5 py-1 rounded-full border border-gray-200">
             <BatteryCharging size={13} />
             <span>Wake-Lock Ready</span>
           </div>
@@ -370,14 +370,14 @@ export const DriverDashboard: React.FC = () => {
           <form onSubmit={handleScanAndStart} className="space-y-4 mt-2">
             {/* Transit Route Assignment Dropdown */}
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-gold-400 uppercase tracking-wider flex items-center gap-1">
+              <label className="text-xs font-semibold text-blue-600 uppercase tracking-wider flex items-center gap-1">
                 <MapPin size={13} /> Select Assigned Transit Route:
               </label>
               <select
                 value={selectedRouteId}
                 onChange={(e) => setSelectedRouteId(e.target.value)}
                 required
-                className="w-full bg-zinc-900 text-white border border-zinc-700 rounded-xl px-3 py-2.5 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-gold-500"
+                className="w-full bg-gray-50 text-gray-900 border border-gray-300 rounded-xl px-3 py-2.5 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-gold-500"
               >
                 <option value="" disabled>-- Choose Destination Route --</option>
                 {availableRoutes.map((route) => (
@@ -391,17 +391,17 @@ export const DriverDashboard: React.FC = () => {
 
             {/* Interactive Live Smartphone Camera Scanner Showcase */}
             {isScanning ? (
-              <div className="p-4 rounded-2xl bg-black border-2 border-gold-500/80 shadow-2xl text-center relative overflow-hidden">
+              <div className="p-4 rounded-2xl bg-white border-2 border-gray-200 shadow-md text-center relative overflow-hidden">
                 <div className="flex items-center justify-center gap-2 mb-3">
-                  <Camera className="text-gold-400 animate-pulse" size={20} />
-                  <span className="text-xs font-black uppercase tracking-wider text-white">Live Camera Scanner Active</span>
+                  <Camera className="text-blue-600 animate-pulse" size={20} />
+                  <span className="text-xs font-black uppercase tracking-wider text-gray-900">Live Camera Scanner Active</span>
                 </div>
-                <div id="reader" className="w-full mx-auto rounded-xl overflow-hidden bg-zinc-900 border border-zinc-700 text-left min-h-[260px] text-white font-sans text-xs"></div>
+                <div id="reader" className="w-full mx-auto rounded-xl overflow-hidden bg-gray-50 border border-gray-300 text-left min-h-[260px] text-gray-900 font-sans text-xs"></div>
                 <p className="text-[11px] text-zinc-400 mt-3 font-medium">Position your mobile device camera directly facing the bus windshield sticker to extract QR secret automatically.</p>
                 <button
                   type="button"
                   onClick={() => setIsScanning(false)}
-                  className="mt-3 w-full py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-red-400 font-extrabold text-xs uppercase tracking-wider transition-all cursor-pointer"
+                  className="mt-3 w-full py-2.5 rounded-xl bg-gray-100 hover:bg-zinc-700 text-red-400 font-extrabold text-xs uppercase tracking-wider transition-all cursor-pointer"
                 >
                   ❌ Close Camera & Return
                 </button>
@@ -411,43 +411,43 @@ export const DriverDashboard: React.FC = () => {
                 <div className="w-12 h-12 bg-emerald-500 text-black rounded-full flex items-center justify-center mx-auto mb-2 shadow-md">
                   <CheckCircle2 size={30} className="stroke-[2.5]" />
                 </div>
-                <h4 className="text-sm font-black text-white uppercase tracking-wide">QR Data Extracted Successfully!</h4>
-                <p className="text-[11px] text-emerald-300 font-mono mt-1.5 p-2 bg-black/60 rounded-lg border border-emerald-500/30 font-bold truncate">Secret: {qrSecretInput}</p>
+                <h4 className="text-sm font-black text-gray-900 uppercase tracking-wide">QR Data Extracted Successfully!</h4>
+                <p className="text-[11px] text-emerald-300 font-mono mt-1.5 p-2 bg-white rounded-lg border border-emerald-500/30 font-bold truncate">Secret: {qrSecretInput}</p>
                 <div className="mt-3 flex gap-2">
                   <button
                     type="button"
                     onClick={() => { setQrSecretInput(""); setIsScanning(true); }}
-                    className="flex-1 py-2 px-3 bg-zinc-800 hover:bg-zinc-700 text-gold-400 font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                    className="flex-1 py-2 px-3 bg-gray-100 hover:bg-zinc-700 text-blue-600 font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                   >
                     <Camera size={14} /> Scan Another Bus
                   </button>
                 </div>
               </div>
             ) : (
-              <div className="p-5 rounded-2xl bg-gradient-to-b from-zinc-900 to-black border-2 border-dashed border-gold-500/60 text-center shadow-lg">
+              <div className="p-5 rounded-2xl bg-gradient-to-b from-white to-black border-2 border-dashed border-gray-200 text-center shadow-lg">
                 <div className="relative inline-block mb-2">
-                  <div className="p-4 bg-gold-500/10 text-gold-400 rounded-full border border-gold-500/30 shadow-inner">
-                    <Camera size={42} className="animate-bounce text-gold-400" />
+                  <div className="p-4 bg-blue-600 text-blue-600 rounded-full border border-gray-200 shadow-inner">
+                    <Camera size={42} className="animate-bounce text-blue-600" />
                   </div>
                 </div>
-                <h4 className="text-sm font-extrabold text-white uppercase tracking-wide mt-1">Windshield Camera Scanner</h4>
+                <h4 className="text-sm font-extrabold text-gray-900 uppercase tracking-wide mt-1">Windshield Camera Scanner</h4>
                 <p className="text-xs text-zinc-300 max-w-[260px] mx-auto mt-1 leading-relaxed">
                   Tap below to launch your camera viewfinder and automatically read the high-resolution QR sticker on the bus windshield.
                 </p>
                 <button
                   type="button"
                   onClick={() => setIsScanning(true)}
-                  className="w-full mt-4 py-3.5 px-4 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 hover:brightness-110 text-black font-black text-xs uppercase tracking-widest shadow-gold transition-all flex items-center justify-center gap-2 transform active:scale-95 cursor-pointer"
+                  className="w-full mt-4 py-3.5 px-4 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 hover:brightness-110 text-black font-black text-xs uppercase tracking-widest shadow-sm transition-all flex items-center justify-center gap-2 transform active:scale-95 cursor-pointer"
                 >
                   <Camera size={18} /> 📷 Open Camera QR Scanner
                 </button>
-                <div className="mt-4 pt-3 border-t border-zinc-800/80">
+                <div className="mt-4 pt-3 border-t border-gray-200/80">
                   <p className="text-[11px] text-zinc-500 uppercase font-semibold mb-1">Or paste code manually for testing:</p>
                   <input
                     type="text"
                     value={qrSecretInput}
                     onChange={(e) => setQrSecretInput(e.target.value)}
-                    className="w-full p-2.5 text-center text-xs font-mono bg-zinc-950 border border-zinc-800 rounded-xl text-gold-400 font-bold focus:outline-none focus:border-gold-500"
+                    className="w-full p-2.5 text-center text-xs font-mono bg-zinc-950 border border-gray-200 rounded-xl text-blue-600 font-bold focus:outline-none focus:border-gray-200"
                     placeholder="Paste secret (e.g. MTRX-BUS-QR-...)"
                   />
                 </div>
@@ -481,37 +481,37 @@ export const DriverDashboard: React.FC = () => {
                 >
                   {isPaused ? <Pause size={12} className="animate-pulse" /> : "⚡"} {isPaused ? "TRIP PAUSED (OFF-DUTY/STOP)" : "Live Trip Active"}
                 </span>
-                <h3 className="text-lg font-bold text-white mt-2">
+                <h3 className="text-lg font-bold text-gray-900 mt-2">
                   {activeBus?.busNumber || "RIT-BUS-01"} ({activeBus?.registrationPlate || "TN-67-101"})
                 </h3>
-                <p className="text-xs text-silver-300 truncate max-w-[200px]">Route: {activeRoute?.name || "Main Campus Route"}</p>
+                <p className="text-xs text-gray-600 truncate max-w-[200px]">Route: {activeRoute?.name || "Main Campus Route"}</p>
               </div>
               <div className="text-right">
-                <span className="text-xs text-gray-400 flex items-center gap-1 justify-end">
+                <span className="text-xs text-gray-600 flex items-center gap-1 justify-end">
                   <Clock size={12} /> Duration
                 </span>
-                <span className={`text-3xl font-mono font-black ${isPaused ? "text-amber-400" : "text-gold-400"}`}>
+                <span className={`text-3xl font-mono font-black ${isPaused ? "text-amber-400" : "text-blue-600"}`}>
                   {formatTime(elapsedSeconds)}
                 </span>
               </div>
             </div>
 
             {/* Real-time GPS HUD */}
-            <div className="grid grid-cols-3 gap-2 mt-5 pt-4 border-t border-zinc-800/80 text-center">
-              <div className="bg-zinc-900/90 p-2.5 rounded-lg border border-zinc-800">
-                <span className="text-[10px] text-gray-400 uppercase font-semibold">Speed</span>
-                <p className="text-base font-black text-white">
+            <div className="grid grid-cols-3 gap-2 mt-5 pt-4 border-t border-gray-200/80 text-center">
+              <div className="bg-gray-50 p-2.5 rounded-lg border border-gray-200">
+                <span className="text-[10px] text-gray-600 uppercase font-semibold">Speed</span>
+                <p className="text-base font-black text-gray-900">
                   {isPaused ? 0 : gpsState.speedKmh} <small className="text-[10px] font-normal">km/h</small>
                 </p>
               </div>
-              <div className="bg-zinc-900/90 p-2.5 rounded-lg border border-zinc-800">
-                <span className="text-[10px] text-gray-400 uppercase font-semibold">Heading</span>
-                <p className="text-base font-black text-white flex items-center justify-center gap-1">
-                  <Compass size={13} className="text-gold-400" /> {Math.round(gpsState.heading || 0)}°
+              <div className="bg-gray-50 p-2.5 rounded-lg border border-gray-200">
+                <span className="text-[10px] text-gray-600 uppercase font-semibold">Heading</span>
+                <p className="text-base font-black text-gray-900 flex items-center justify-center gap-1">
+                  <Compass size={13} className="text-blue-600" /> {Math.round(gpsState.heading || 0)}°
                 </p>
               </div>
-              <div className="bg-zinc-900/90 p-2.5 rounded-lg border border-zinc-800">
-                <span className="text-[10px] text-gray-400 uppercase font-semibold">GPS Accuracy</span>
+              <div className="bg-gray-50 p-2.5 rounded-lg border border-gray-200">
+                <span className="text-[10px] text-gray-600 uppercase font-semibold">GPS Accuracy</span>
                 <p className="text-base font-black text-emerald-400">±{Math.round(gpsState.accuracy || 10)}m</p>
               </div>
             </div>
@@ -524,7 +524,7 @@ export const DriverDashboard: React.FC = () => {
               onClick={handleTogglePause}
               className={`py-3.5 px-3 rounded-xl font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer ${
                 isPaused
-                  ? "bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400 animate-bounce"
+                  ? "bg-emerald-600 hover:bg-emerald-500 text-gray-900 border border-emerald-400 animate-bounce"
                   : "bg-amber-600/90 hover:bg-amber-500 text-black border border-amber-400"
               }`}
             >
@@ -535,9 +535,9 @@ export const DriverDashboard: React.FC = () => {
             {/* Log Fuel & Mileage Expense Button */}
             <button
               onClick={() => setIsFuelModalOpen(true)}
-              className="py-3.5 px-3 rounded-xl bg-gradient-to-r from-zinc-800 to-zinc-900 hover:bg-zinc-800 text-gold-400 border border-gold-500/40 font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-md"
+              className="py-3.5 px-3 rounded-xl bg-gradient-to-r from-zinc-800 to-gray-50 hover:bg-gray-100 text-blue-600 border border-gray-200 font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-md"
             >
-              <Fuel size={16} className="text-gold-400 animate-pulse" />
+              <Fuel size={16} className="text-blue-600 animate-pulse" />
               <span>Log Fuel / Expense</span>
             </button>
           </div>
@@ -545,7 +545,7 @@ export const DriverDashboard: React.FC = () => {
           {/* Emergency SOS Distress Button */}
           <button
             onClick={handleTriggerSOS}
-            className="w-full py-5 rounded-2xl bg-gradient-to-r from-rose-700 via-rose-600 to-rose-700 hover:from-rose-600 hover:to-rose-800 text-white font-extrabold text-base sm:text-lg tracking-wider uppercase shadow-2xl border-2 border-rose-400 flex items-center justify-center gap-2.5 animate-pulse transition-all cursor-pointer transform active:scale-95"
+            className="w-full py-5 rounded-2xl bg-gradient-to-r from-rose-700 via-rose-600 to-rose-700 hover:from-rose-600 hover:to-rose-800 text-gray-900 font-extrabold text-base sm:text-lg tracking-wider uppercase shadow-md border-2 border-rose-400 flex items-center justify-center gap-2.5 animate-pulse transition-all cursor-pointer transform active:scale-95"
           >
             <AlertTriangle size={24} className="animate-bounce" /> Trigger Emergency SOS
           </button>
@@ -553,7 +553,7 @@ export const DriverDashboard: React.FC = () => {
           {/* End Trip Action */}
           <button
             onClick={handleEndTrip}
-            className="w-full py-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-silver-300 hover:text-white font-black text-xs sm:text-sm uppercase tracking-widest border border-zinc-700 flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg hover:border-zinc-500"
+            className="w-full py-4 rounded-xl bg-gray-50 hover:bg-gray-100 text-gray-600 hover:text-gray-900 font-black text-xs sm:text-sm uppercase tracking-widest border border-gray-300 flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg hover:border-zinc-500"
           >
             <Square size={16} fill="currentColor" /> Conclude & Terminate Shift
           </button>
@@ -562,14 +562,14 @@ export const DriverDashboard: React.FC = () => {
 
       {/* FUEL & MILEAGE EXPENSE LOGGING MODAL */}
       {isFuelModalOpen && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-zinc-950 border border-amber-500/40 rounded-2xl p-6 shadow-2xl space-y-5 animate-in zoom-in-95 duration-200">
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-              <div className="flex items-center gap-2 text-gold-400 font-bold">
+        <div className="fixed inset-0 bg-white backdrop-blur-md z-50 flex items-center justify-center p-4">
+          <div className="w-full max-w-md bg-zinc-950 border border-amber-500/40 rounded-2xl p-6 shadow-md space-y-5 animate-in zoom-in-95 duration-200">
+            <div className="flex items-center justify-between pb-3 border-b border-gray-200">
+              <div className="flex items-center gap-2 text-blue-600 font-bold">
                 <Fuel size={20} />
-                <h3 className="text-white text-base tracking-wider uppercase">Operating Expense Log</h3>
+                <h3 className="text-gray-900 text-base tracking-wider uppercase">Operating Expense Log</h3>
               </div>
-              <button onClick={() => setIsFuelModalOpen(false)} className="text-zinc-400 hover:text-white p-1">
+              <button onClick={() => setIsFuelModalOpen(false)} className="text-zinc-400 hover:text-gray-900 p-1">
                 <X size={20} />
               </button>
             </div>
@@ -577,7 +577,7 @@ export const DriverDashboard: React.FC = () => {
             <form onSubmit={handleSubmitExpenseLog} className="space-y-4 text-xs">
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-silver-300 font-semibold block mb-1">Start Odometer (km):</label>
+                  <label className="text-gray-600 font-semibold block mb-1">Start Odometer (km):</label>
                   <input
                     type="number"
                     step="any"
@@ -585,11 +585,11 @@ export const DriverDashboard: React.FC = () => {
                     value={odometerStart}
                     onChange={(e) => setOdometerStart(e.target.value)}
                     required
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-700 rounded-lg text-white font-mono focus:border-gold-500 focus:outline-none"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 font-mono focus:border-gray-200 focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="text-silver-300 font-semibold block mb-1">End Odometer (km):</label>
+                  <label className="text-gray-600 font-semibold block mb-1">End Odometer (km):</label>
                   <input
                     type="number"
                     step="any"
@@ -597,44 +597,44 @@ export const DriverDashboard: React.FC = () => {
                     value={odometerEnd}
                     onChange={(e) => setOdometerEnd(e.target.value)}
                     required
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-700 rounded-lg text-white font-mono focus:border-gold-500 focus:outline-none"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 font-mono focus:border-gray-200 focus:outline-none"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-silver-300 font-semibold block mb-1">Fuel Added (Liters):</label>
+                  <label className="text-gray-600 font-semibold block mb-1">Fuel Added (Liters):</label>
                   <input
                     type="number"
                     step="any"
                     placeholder="e.g. 25.5"
                     value={fuelLiters}
                     onChange={(e) => setFuelLiters(e.target.value)}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-700 rounded-lg text-white font-mono focus:border-gold-500 focus:outline-none"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 font-mono focus:border-gray-200 focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="text-silver-300 font-semibold block mb-1">Total Fuel Cost (₹/$):</label>
+                  <label className="text-gray-600 font-semibold block mb-1">Total Fuel Cost (₹/$):</label>
                   <input
                     type="number"
                     step="any"
                     placeholder="e.g. 2450"
                     value={fuelCost}
                     onChange={(e) => setFuelCost(e.target.value)}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-700 rounded-lg text-white font-mono focus:border-gold-500 focus:outline-none"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 font-mono focus:border-gray-200 focus:outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-silver-300 font-semibold block mb-1">Route & Maintenance Notes:</label>
+                <label className="text-gray-600 font-semibold block mb-1">Route & Maintenance Notes:</label>
                 <textarea
                   rows={3}
                   placeholder="Record any vehicle warning lights, tire pressure notes, or traffic incidents..."
                   value={driverNotes}
                   onChange={(e) => setDriverNotes(e.target.value)}
-                  className="w-full p-2.5 bg-zinc-900 border border-zinc-700 rounded-lg text-white focus:border-gold-500 focus:outline-none"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 focus:border-gray-200 focus:outline-none"
                 />
               </div>
 
@@ -642,14 +642,14 @@ export const DriverDashboard: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsFuelModalOpen(false)}
-                  className="w-1/2 py-3 rounded-xl bg-zinc-800 text-zinc-300 hover:bg-zinc-700 font-bold uppercase text-xs transition-colors"
+                  className="w-1/2 py-3 rounded-xl bg-gray-100 text-zinc-300 hover:bg-zinc-700 font-bold uppercase text-xs transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={submittingExpense}
-                  className="w-1/2 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:brightness-110 text-black font-black uppercase text-xs shadow-gold transition-all flex items-center justify-center gap-1.5"
+                  className="w-1/2 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:brightness-110 text-black font-black uppercase text-xs shadow-sm transition-all flex items-center justify-center gap-1.5"
                 >
                   <CheckCircle2 size={16} /> {submittingExpense ? "Saving..." : "Save Expense Log"}
                 </button>
@@ -661,23 +661,23 @@ export const DriverDashboard: React.FC = () => {
 
       {/* Task 7: Mandatory Data Governance & Privacy Consent Modal */}
       {!hasConsented && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in">
-          <div className="bg-gradient-to-b from-zinc-900 to-black border-2 border-gold-500/60 rounded-3xl p-6 w-full max-w-sm shadow-2xl shadow-gold/20 text-left space-y-4">
-            <div className="flex items-center gap-3 border-b border-zinc-800 pb-3">
-              <div className="p-2.5 bg-gradient-to-tr from-gold-500/20 to-amber-500/20 text-gold-400 rounded-2xl border border-gold-500/30">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white backdrop-blur-md animate-fade-in">
+          <div className="bg-gradient-to-b from-white to-black border-2 border-gray-200 rounded-3xl p-6 w-full max-w-sm shadow-md shadow-sm/20 text-left space-y-4">
+            <div className="flex items-center gap-3 border-b border-gray-200 pb-3">
+              <div className="p-2.5 bg-gradient-to-tr from-gold-500/20 to-amber-500/20 text-blue-600 rounded-2xl border border-gray-200">
                 <Shield size={24} />
               </div>
               <div>
-                <h3 className="text-sm font-bold text-white uppercase tracking-wider">Enterprise Telemetry</h3>
-                <p className="text-[11px] text-gold-400 font-medium">Privacy & Compliance Disclosure</p>
+                <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider">Enterprise Telemetry</h3>
+                <p className="text-[11px] text-blue-600 font-medium">Privacy & Compliance Disclosure</p>
               </div>
             </div>
 
-            <div className="text-xs text-silver-300 space-y-2 leading-relaxed">
+            <div className="text-xs text-gray-600 space-y-2 leading-relaxed">
               <p>
                 To comply with institutional vehicle telemetry & driver safety governance, RIT Bus Tracker requires continuous high-precision GPS tracking during official transit duty hours.
               </p>
-              <div className="bg-zinc-950/80 border border-zinc-800 p-3 rounded-xl space-y-1.5 text-[11px]">
+              <div className="bg-zinc-950/80 border border-gray-200 p-3 rounded-xl space-y-1.5 text-[11px]">
                 <div className="flex items-center gap-2 text-emerald-400 font-medium">
                   <CheckCircle2 size={13} /> Only active during official campus trips
                 </div>
@@ -694,7 +694,7 @@ export const DriverDashboard: React.FC = () => {
               type="button"
               onClick={handleGrantConsent}
               disabled={submittingConsent}
-              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-yellow-600 hover:brightness-110 text-black font-black uppercase text-xs tracking-wider shadow-gold transition-all flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-yellow-600 hover:brightness-110 text-black font-black uppercase text-xs tracking-wider shadow-sm transition-all flex items-center justify-center gap-2"
             >
               <Shield size={16} className="fill-black" />
               {submittingConsent ? "Recording Consent..." : "I Consent & Accept Terms"}

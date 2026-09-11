@@ -388,11 +388,11 @@ export const OrgAdminDashboard: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Luxury Navigation Tabs */}
-      <div className="flex bg-[#121212] border border-gold-500/30 rounded-2xl p-1.5 shadow-gold gap-1 max-w-4xl mx-auto overflow-x-auto">
+      <div className="flex bg-[#121212] border border-gray-200 rounded-2xl p-1.5 shadow-sm gap-1 max-w-4xl mx-auto overflow-x-auto">
         <button
           onClick={() => setActiveTab("fleet")}
           className={`flex-1 min-w-[140px] py-2.5 px-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
-            activeTab === "fleet" ? "bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black shadow-lg" : "text-silver-400 hover:text-white hover:bg-zinc-800/60"
+            activeTab === "fleet" ? "bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black shadow-lg" : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           }`}
         >
           <Bus size={15} /> Fleet Command
@@ -400,7 +400,7 @@ export const OrgAdminDashboard: React.FC = () => {
         <button
           onClick={() => setActiveTab("routes")}
           className={`flex-1 min-w-[140px] py-2.5 px-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
-            activeTab === "routes" ? "bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black shadow-lg" : "text-silver-400 hover:text-white hover:bg-zinc-800/60"
+            activeTab === "routes" ? "bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black shadow-lg" : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           }`}
         >
           <RouteIcon size={15} /> Route Intelligence
@@ -408,7 +408,7 @@ export const OrgAdminDashboard: React.FC = () => {
         <button
           onClick={() => setActiveTab("drivers")}
           className={`flex-1 min-w-[140px] py-2.5 px-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
-            activeTab === "drivers" ? "bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black shadow-lg" : "text-silver-400 hover:text-white hover:bg-zinc-800/60"
+            activeTab === "drivers" ? "bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black shadow-lg" : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           }`}
         >
           <Users size={15} /> Staff & Shifts
@@ -416,7 +416,7 @@ export const OrgAdminDashboard: React.FC = () => {
         <button
           onClick={() => setActiveTab("audit")}
           className={`flex-1 min-w-[140px] py-2.5 px-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
-            activeTab === "audit" ? "bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black shadow-lg" : "text-silver-400 hover:text-white hover:bg-zinc-800/60"
+            activeTab === "audit" ? "bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black shadow-lg" : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           }`}
         >
           <ShieldCheck size={15} /> Governance Audit
@@ -424,7 +424,7 @@ export const OrgAdminDashboard: React.FC = () => {
         <button
           onClick={() => setActiveTab("reports")}
           className={`flex-1 min-w-[140px] py-2.5 px-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
-            activeTab === "reports" ? "bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black shadow-lg" : "text-silver-400 hover:text-white hover:bg-zinc-800/60"
+            activeTab === "reports" ? "bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black shadow-lg" : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           }`}
         >
           <BarChart3 size={15} /> Analytics & Reports
@@ -437,31 +437,31 @@ export const OrgAdminDashboard: React.FC = () => {
         <>
           <GlassCard title="College Transportation Fleet Command" subtitle="Live monitoring and QR security administration for institutional buses">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
-              <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
-                <span className="text-xs text-gray-400 uppercase">Total Enrolled Buses</span>
-                <p className="text-2xl font-bold text-gold-400 mt-1">{buses.length}</p>
+              <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
+                <span className="text-xs text-gray-600 uppercase">Total Enrolled Buses</span>
+                <p className="text-2xl font-bold text-blue-600 mt-1">{buses.length}</p>
               </div>
-              <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
-                <span className="text-xs text-gray-400 uppercase">On Active Transit</span>
+              <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
+                <span className="text-xs text-gray-600 uppercase">On Active Transit</span>
                 <p className="text-2xl font-bold text-emerald-400 mt-1">
                   {buses.filter((b) => b.status === "ON_TRIP").length}
                 </p>
               </div>
-              <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-between gap-2">
+              <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-between gap-2">
                 <div>
-                  <span className="text-xs text-gray-400 uppercase">QR Cryptographic Shield</span>
-                  <p className="text-sm font-bold text-white mt-1">Active (SHA-256 Seed)</p>
+                  <span className="text-xs text-gray-600 uppercase">QR Cryptographic Shield</span>
+                  <p className="text-sm font-bold text-gray-900 mt-1">Active (SHA-256 Seed)</p>
                 </div>
                 <div className="flex flex-col gap-1.5 shrink-0">
                   <button
                     onClick={() => setShowNewBusModal(true)}
-                    className="px-3 py-1.5 rounded-lg bg-gold-500 text-black text-[11px] font-bold hover:bg-gold-400 flex items-center justify-center gap-1 shadow-sm cursor-pointer"
+                    className="px-3 py-1.5 rounded-lg bg-blue-600 text-black text-[11px] font-bold hover:bg-blue-700 flex items-center justify-center gap-1 shadow-sm cursor-pointer"
                   >
                     <Plus size={14} /> Add Bus
                   </button>
                   <button
                     onClick={() => { setCsvInput(""); setShowCSVModal({ isOpen: true, type: "buses" }); }}
-                    className="px-2.5 py-1.5 rounded-lg bg-zinc-800 border border-gold-500/40 text-gold-400 hover:bg-zinc-700 text-[11px] font-bold flex items-center justify-center gap-1 transition-all cursor-pointer"
+                    className="px-2.5 py-1.5 rounded-lg bg-gray-100 border border-gray-200 text-blue-600 hover:bg-zinc-700 text-[11px] font-bold flex items-center justify-center gap-1 transition-all cursor-pointer"
                   >
                     <Upload size={13} /> Bulk CSV Import
                   </button>
@@ -490,27 +490,27 @@ export const OrgAdminDashboard: React.FC = () => {
             <div>
               <GlassCard title="Enrolled Fleet & Route Binding" subtitle="Assign routes and download windshield codes">
                 {loading ? (
-                  <p className="text-xs text-gray-400">Loading bus records...</p>
+                  <p className="text-xs text-gray-600">Loading bus records...</p>
                 ) : (
                   <div className="space-y-3 max-h-[400px] overflow-y-auto pr-1">
                     {buses.map((bus) => (
-                      <div key={bus._id} className="p-3 rounded-xl bg-zinc-900 border border-zinc-800 space-y-2">
+                      <div key={bus._id} className="p-3 rounded-xl bg-gray-50 border border-gray-200 space-y-2">
                         <div className="flex items-center justify-between">
                           <div>
-                            <h4 className="font-bold text-white text-sm">{bus.busNumber}</h4>
-                            <p className="text-[11px] font-mono text-gold-400">{bus.registrationPlate}</p>
+                            <h4 className="font-bold text-gray-900 text-sm">{bus.busNumber}</h4>
+                            <p className="text-[11px] font-mono text-blue-600">{bus.registrationPlate}</p>
                           </div>
-                          <span className={`px-2 py-0.5 rounded text-[10px] uppercase font-bold ${bus.status === "ON_TRIP" ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-zinc-800 text-gray-400"}`}>
+                          <span className={`px-2 py-0.5 rounded text-[10px] uppercase font-bold ${bus.status === "ON_TRIP" ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-gray-100 text-gray-600"}`}>
                             {bus.status}
                           </span>
                         </div>
 
                         {/* Route Selector Binding */}
-                        <div className="flex items-center gap-2 pt-1 border-t border-zinc-800/70">
+                        <div className="flex items-center gap-2 pt-1 border-t border-gray-200/70">
                           <select
                             value={bus.assignedRouteId?._id || bus.assignedRouteId || ""}
                             onChange={(e) => handleAssignRoute(bus._id, e.target.value)}
-                            className="flex-1 text-xs bg-zinc-950 text-silver-300 rounded border border-zinc-800 p-1.5 font-medium"
+                            className="flex-1 text-xs bg-zinc-950 text-gray-600 rounded border border-gray-200 p-1.5 font-medium"
                           >
                             <option value="">-- No Route Attached --</option>
                             {routes.map((r) => (
@@ -519,14 +519,14 @@ export const OrgAdminDashboard: React.FC = () => {
                           </select>
                           <button
                             onClick={() => handleGenerateQR(bus._id)}
-                            className="p-1.5 px-2.5 rounded-lg bg-gold-500/10 hover:bg-gold-500 hover:text-black border border-gold-500/30 text-gold-400 font-bold transition-all text-xs flex items-center gap-1 cursor-pointer"
+                            className="p-1.5 px-2.5 rounded-lg bg-blue-600 hover:bg-blue-600 hover:text-black border border-gray-200 text-blue-600 font-bold transition-all text-xs flex items-center gap-1 cursor-pointer"
                             title="View QR Code"
                           >
                             <QrCode size={14} /> QR
                           </button>
                           <button
                             onClick={() => handleDeleteBus(bus._id, bus.busNumber)}
-                            className="p-1.5 px-2.5 rounded-lg bg-rose-500/10 hover:bg-rose-600 hover:text-white border border-rose-500/30 text-rose-400 font-bold transition-all text-xs flex items-center gap-1 cursor-pointer"
+                            className="p-1.5 px-2.5 rounded-lg bg-rose-500/10 hover:bg-rose-600 hover:text-gray-900 border border-rose-500/30 text-rose-400 font-bold transition-all text-xs flex items-center gap-1 cursor-pointer"
                             title="Remove Bus (if added accidentally)"
                           >
                             <Trash2 size={14} />
@@ -546,13 +546,13 @@ export const OrgAdminDashboard: React.FC = () => {
       {activeTab === "routes" && (
         <div className="space-y-6">
           <GlassCard title="Route Schedules & Ordered Stop Sequencing" subtitle="Configure transit itineraries and chronological bus stops">
-            <div className="flex justify-between items-center bg-zinc-900/80 p-4 rounded-xl border border-zinc-800 mb-6">
-              <div className="text-sm text-silver-300">
-                <span className="text-gold-400 font-bold">{routes.length} Active Routes</span> configured with chronological waypoint sequencing and GPS arrival buffers.
+            <div className="flex justify-between items-center bg-gray-50 p-4 rounded-xl border border-gray-200 mb-6">
+              <div className="text-sm text-gray-600">
+                <span className="text-blue-600 font-bold">{routes.length} Active Routes</span> configured with chronological waypoint sequencing and GPS arrival buffers.
               </div>
               <button
                 onClick={() => setShowNewRouteModal(true)}
-                className="px-4 py-2 bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-400 hover:to-gold-600 text-black font-bold rounded-xl text-xs flex items-center gap-2 shadow-gold cursor-pointer"
+                className="px-4 py-2 bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-400 hover:to-gold-600 text-black font-bold rounded-xl text-xs flex items-center gap-2 shadow-sm cursor-pointer"
               >
                 <Plus size={16} /> Define New Route Schedule
               </button>
@@ -560,31 +560,31 @@ export const OrgAdminDashboard: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {routes.map((r) => (
-                <div key={r._id} className="p-5 rounded-2xl bg-gradient-to-b from-zinc-900 to-zinc-950 border border-gold-500/30 hover:border-gold-500/60 transition-all shadow-xl space-y-4">
+                <div key={r._id} className="p-5 rounded-2xl bg-gradient-to-b from-white to-zinc-950 border border-gray-200 hover:border-gray-200 transition-all shadow-sm space-y-4">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="px-2 py-0.5 rounded bg-gold-500/20 text-gold-400 font-mono text-xs font-bold border border-gold-500/30">{r.routeCode}</span>
-                      <h3 className="text-lg font-bold text-white mt-1.5">{r.name}</h3>
-                      {r.description && <p className="text-xs text-silver-400 mt-0.5">{r.description}</p>}
+                      <span className="px-2 py-0.5 rounded bg-blue-600 text-blue-600 font-mono text-xs font-bold border border-gray-200">{r.routeCode}</span>
+                      <h3 className="text-lg font-bold text-gray-900 mt-1.5">{r.name}</h3>
+                      {r.description && <p className="text-xs text-gray-500 mt-0.5">{r.description}</p>}
                     </div>
                     <div className="text-right">
-                      <span className="text-xs text-silver-400 font-semibold block">Est. Duration</span>
+                      <span className="text-xs text-gray-500 font-semibold block">Est. Duration</span>
                       <span className="text-emerald-400 font-mono font-bold text-sm">⏱️ {r.estimatedDurationMins || 45} mins</span>
                     </div>
                   </div>
 
-                  <div className="pt-3 border-t border-zinc-800 space-y-2">
-                    <p className="text-[11px] uppercase font-bold text-gold-400 tracking-wider">Chronological Stop Sequencing ({r.stops?.length || 0} Stops)</p>
+                  <div className="pt-3 border-t border-gray-200 space-y-2">
+                    <p className="text-[11px] uppercase font-bold text-blue-600 tracking-wider">Chronological Stop Sequencing ({r.stops?.length || 0} Stops)</p>
                     <div className="space-y-1.5 max-h-48 overflow-y-auto pr-1">
                       {r.stops?.map((stop: any, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-zinc-900/90 border border-zinc-800 text-xs">
+                        <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-gray-50 border border-gray-200 text-xs">
                           <div className="flex items-center gap-2">
-                            <span className="w-5 h-5 rounded-full bg-gold-500 text-black font-extrabold text-[10px] flex items-center justify-center">
+                            <span className="w-5 h-5 rounded-full bg-blue-600 text-black font-extrabold text-[10px] flex items-center justify-center">
                               {stop.order || idx + 1}
                             </span>
-                            <span className="font-semibold text-white">{stop.name}</span>
+                            <span className="font-semibold text-gray-900">{stop.name}</span>
                           </div>
-                          <span className="text-[11px] font-mono text-silver-400">+ {stop.scheduledMinutesFromStart || 0} mins</span>
+                          <span className="text-[11px] font-mono text-gray-500">+ {stop.scheduledMinutesFromStart || 0} mins</span>
                         </div>
                       ))}
                     </div>
@@ -600,26 +600,26 @@ export const OrgAdminDashboard: React.FC = () => {
       {activeTab === "drivers" && (
         <div className="space-y-6">
           <GlassCard title="Driver Workforce & Shift Schedule Administration" subtitle="Assign operational shifts and match transit personnel to specific fleet vehicles">
-            <div className="flex flex-wrap items-center justify-between gap-3 mb-6 bg-zinc-950/60 p-4 rounded-2xl border border-zinc-800">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-6 bg-zinc-950/60 p-4 rounded-2xl border border-gray-200">
               <div className="flex items-center gap-3">
-                <div className="p-3 rounded-xl bg-gold-500/20 text-gold-400">
+                <div className="p-3 rounded-xl bg-blue-600 text-blue-600">
                   <UserCheck size={24} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white">Active Transit Staff Roster</h4>
-                  <p className="text-xs text-silver-400">{drivers.length} registered personnel inside organization</p>
+                  <h4 className="text-sm font-bold text-gray-900">Active Transit Staff Roster</h4>
+                  <p className="text-xs text-gray-500">{drivers.length} registered personnel inside organization</p>
                 </div>
               </div>
               <div className="flex flex-wrap items-center gap-2">
                 <button
                   onClick={() => setShowNewDriverModal(true)}
-                  className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-500 hover:brightness-110 text-black font-extrabold text-xs flex items-center gap-2 shadow-gold transition-all cursor-pointer"
+                  className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-500 hover:brightness-110 text-black font-extrabold text-xs flex items-center gap-2 shadow-sm transition-all cursor-pointer"
                 >
                   <Plus size={16} /> Add Single Driver Manually
                 </button>
                 <button
                   onClick={() => { setCsvInput(""); setShowCSVModal({ isOpen: true, type: "drivers" }); }}
-                  className="px-4 py-2.5 rounded-xl bg-zinc-900 border border-gold-500/40 text-gold-400 hover:bg-zinc-800 font-extrabold text-xs flex items-center gap-2 transition-all cursor-pointer shadow-sm"
+                  className="px-4 py-2.5 rounded-xl bg-gray-50 border border-gray-200 text-blue-600 hover:bg-gray-100 font-extrabold text-xs flex items-center gap-2 transition-all cursor-pointer shadow-sm"
                 >
                   <FileSpreadsheet size={16} /> 📥 Bulk CSV Driver Onboard
                 </button>
@@ -627,18 +627,18 @@ export const OrgAdminDashboard: React.FC = () => {
             </div>
 
             {driversLoading ? (
-              <p className="text-center py-8 text-silver-400 text-xs animate-pulse">Loading transit staff credentials...</p>
+              <p className="text-center py-8 text-gray-500 text-xs animate-pulse">Loading transit staff credentials...</p>
             ) : drivers.length === 0 ? (
-              <div className="text-center py-12 bg-zinc-900/50 rounded-2xl border border-zinc-800 text-silver-400">
-                <Users size={36} className="mx-auto text-gold-500/50 mb-3" />
-                <p className="text-sm font-bold text-white">No drivers found in this college organization.</p>
+              <div className="text-center py-12 bg-gray-50 rounded-2xl border border-gray-200 text-gray-500">
+                <Users size={36} className="mx-auto text-blue-700/50 mb-3" />
+                <p className="text-sm font-bold text-gray-900">No drivers found in this college organization.</p>
                 <p className="text-xs text-zinc-400 mt-1">Click the Bulk CSV Onboard button above to quickly batch import driver staff.</p>
               </div>
             ) : (
-              <div className="overflow-x-auto rounded-2xl border border-zinc-800/80">
+              <div className="overflow-x-auto rounded-2xl border border-gray-200/80">
                 <table className="w-full text-left border-collapse text-xs">
                   <thead>
-                    <tr className="bg-zinc-900 text-gold-400 border-b border-zinc-800 text-[11px] uppercase tracking-wider">
+                    <tr className="bg-gray-50 text-blue-600 border-b border-gray-200 text-[11px] uppercase tracking-wider">
                       <th className="p-4">Driver Name</th>
                       <th className="p-4">Contact Email & Phone</th>
                       <th className="p-4">Assigned Vehicle</th>
@@ -647,27 +647,27 @@ export const OrgAdminDashboard: React.FC = () => {
                       <th className="p-4 text-right">Duty Actions</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-zinc-800/60 bg-black/40">
+                  <tbody className="divide-y divide-zinc-800/60 bg-white">
                     {drivers.map((d) => (
-                      <tr key={d._id} className="hover:bg-zinc-900/60 transition-colors">
-                        <td className="p-4 font-extrabold text-white flex items-center gap-2">
+                      <tr key={d._id} className="hover:bg-gray-50 transition-colors">
+                        <td className="p-4 font-extrabold text-gray-900 flex items-center gap-2">
                           <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block" />
                           {d.name}
                         </td>
-                        <td className="p-4 text-silver-300">
+                        <td className="p-4 text-gray-600">
                           <div>{d.email}</div>
-                          <div className="text-[11px] text-gold-400 font-mono">{d.phone || "+91-94430-TRANSIT"}</div>
+                          <div className="text-[11px] text-blue-600 font-mono">{d.phone || "+91-94430-TRANSIT"}</div>
                         </td>
-                        <td className="p-4 font-bold text-white">
+                        <td className="p-4 font-bold text-gray-900">
                           {d.assignedBusId?.busNumber ? (
-                            <span className="px-2 py-1 rounded bg-zinc-800 border border-gold-500/30 text-gold-300">
+                            <span className="px-2 py-1 rounded bg-gray-100 border border-gray-200 text-gold-300">
                               🚍 {d.assignedBusId.busNumber}
                             </span>
                           ) : (
                             <span className="text-zinc-500 italic">Unassigned</span>
                           )}
                         </td>
-                        <td className="p-4 text-silver-300 font-semibold">
+                        <td className="p-4 text-gray-600 font-semibold">
                           {d.assignedRouteId?.name || <span className="text-zinc-500 italic">No Fixed Route</span>}
                         </td>
                         <td className="p-4">
@@ -687,9 +687,9 @@ export const OrgAdminDashboard: React.FC = () => {
                                 shiftEnd: d.shiftEnd || "06:00 PM",
                               });
                             }}
-                            className="px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white font-extrabold text-xs border border-zinc-700 inline-flex items-center gap-1 cursor-pointer hover:border-gold-500/50"
+                            className="px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-zinc-700 text-gray-900 font-extrabold text-xs border border-gray-300 inline-flex items-center gap-1 cursor-pointer hover:border-gray-200"
                           >
-                            <Settings size={13} className="text-gold-400" /> Assign Shift
+                            <Settings size={13} className="text-blue-600" /> Assign Shift
                           </button>
                         </td>
                       </tr>
@@ -708,13 +708,13 @@ export const OrgAdminDashboard: React.FC = () => {
           {/* Tasks 7 & 8: Enterprise Data Retention Engine & Institutional Branding */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <GlassCard title="Data Retention Governance Policy" subtitle="Configure automated telemetry TTL auto-purge and trip archiving windows">
-              <div className="space-y-4 text-xs text-silver-300">
+              <div className="space-y-4 text-xs text-gray-600">
                 <p>
                   To comply with institutional privacy directives and preserve DB storage, historical high-frequency GPS stream logs and completed trips beyond the retention window are automatically pruned or archived.
                 </p>
-                <div className="flex items-center justify-between p-3.5 bg-zinc-900/80 border border-zinc-800 rounded-xl">
+                <div className="flex items-center justify-between p-3.5 bg-gray-50 border border-gray-200 rounded-xl">
                   <div className="space-y-0.5">
-                    <label className="font-bold text-white uppercase tracking-wider text-[11px]">Retention Window (Days)</label>
+                    <label className="font-bold text-gray-900 uppercase tracking-wider text-[11px]">Retention Window (Days)</label>
                     <p className="text-[10px] text-zinc-400">Default is 60 days on standard deployments</p>
                   </div>
                   <input
@@ -723,7 +723,7 @@ export const OrgAdminDashboard: React.FC = () => {
                     max="365"
                     value={retentionDays}
                     onChange={(e) => setRetentionDays(Number(e.target.value))}
-                    className="w-24 p-2 bg-black border border-gold-500/40 rounded-lg text-center font-bold text-gold-400 font-mono text-sm focus:outline-none"
+                    className="w-24 p-2 bg-white border border-gray-200 rounded-lg text-center font-bold text-blue-600 font-mono text-sm focus:outline-none"
                   />
                 </div>
 
@@ -731,7 +731,7 @@ export const OrgAdminDashboard: React.FC = () => {
                   <button
                     onClick={handleSaveGovernance}
                     disabled={savingGovernance}
-                    className="w-1/2 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:brightness-110 text-black font-black uppercase text-[11px] tracking-wider shadow-gold transition-all cursor-pointer"
+                    className="w-1/2 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:brightness-110 text-black font-black uppercase text-[11px] tracking-wider shadow-sm transition-all cursor-pointer"
                   >
                     {savingGovernance ? "Saving..." : "Save Policy"}
                   </button>
@@ -753,37 +753,37 @@ export const OrgAdminDashboard: React.FC = () => {
             </GlassCard>
 
             <GlassCard title="Institutional Branding & Theme Customization" subtitle="Tailor campus portal identity, logos, and accent styling (Task 8)">
-              <div className="space-y-3.5 text-xs text-silver-300">
+              <div className="space-y-3.5 text-xs text-gray-600">
                 <div>
-                  <label className="block text-[11px] font-bold text-white uppercase mb-1">Campus Portal Header Text</label>
+                  <label className="block text-[11px] font-bold text-gray-900 uppercase mb-1">Campus Portal Header Text</label>
                   <input
                     type="text"
                     value={brandingHeader}
                     onChange={(e) => setBrandingHeader(e.target.value)}
                     placeholder="RIT Campus Transit Engine"
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-lg text-white font-medium focus:border-gold-500 focus:outline-none"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 font-medium focus:border-gray-200 focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold text-white uppercase mb-1">Institutional Logo URL (.PNG / .SVG)</label>
+                  <label className="block text-[11px] font-bold text-gray-900 uppercase mb-1">Institutional Logo URL (.PNG / .SVG)</label>
                   <input
                     type="text"
                     value={brandingLogo}
                     onChange={(e) => setBrandingLogo(e.target.value)}
                     placeholder="https://campus.edu/assets/logo.png"
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-lg text-white font-mono text-[11px] focus:border-gold-500 focus:outline-none"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 font-mono text-[11px] focus:border-gray-200 focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold text-white uppercase mb-1">Primary Brand Accent Color</label>
+                  <label className="block text-[11px] font-bold text-gray-900 uppercase mb-1">Primary Brand Accent Color</label>
                   <div className="flex items-center gap-3">
                     <input
                       type="color"
                       value={brandingColor}
                       onChange={(e) => setBrandingColor(e.target.value)}
-                      className="w-12 h-9 p-1 bg-zinc-900 border border-zinc-800 rounded-lg cursor-pointer"
+                      className="w-12 h-9 p-1 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer"
                     />
-                    <span className="font-mono font-bold text-gold-400 text-sm uppercase">{brandingColor}</span>
+                    <span className="font-mono font-bold text-blue-600 text-sm uppercase">{brandingColor}</span>
                   </div>
                 </div>
               </div>
@@ -791,13 +791,13 @@ export const OrgAdminDashboard: React.FC = () => {
           </div>
 
           <GlassCard title="Enterprise Governance & Permanent Audit Trail" subtitle="Cryptographically tamper-proof log of staff shift assignments, vehicle transfers, and data uploads">
-            <div className="flex items-center justify-between gap-4 mb-4 pb-3 border-b border-zinc-800 text-xs">
+            <div className="flex items-center justify-between gap-4 mb-4 pb-3 border-b border-gray-200 text-xs">
               <span className="text-emerald-400 font-bold flex items-center gap-1.5">
                 <ShieldCheck size={16} /> Regulatory Compliance Logging Active
               </span>
               <button
                 onClick={fetchAuditLogs}
-                className="p-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-gold-400 border border-zinc-700 flex items-center gap-1 font-semibold transition-transform active:scale-95"
+                className="p-2 rounded-lg bg-gray-50 hover:bg-gray-100 text-blue-600 border border-gray-300 flex items-center gap-1 font-semibold transition-transform active:scale-95"
               >
                 <RefreshCw size={14} className={auditLoading ? "animate-spin" : ""} /> Refresh Logs
               </button>
@@ -812,10 +812,10 @@ export const OrgAdminDashboard: React.FC = () => {
                 <p className="mt-1 text-[11px]">Any driver reassignment or CSV batch upload will be automatically permanently inscribed here.</p>
               </div>
             ) : (
-              <div className="overflow-x-auto rounded-2xl border border-zinc-800/80">
+              <div className="overflow-x-auto rounded-2xl border border-gray-200/80">
                 <table className="w-full text-left border-collapse text-xs font-mono">
                   <thead>
-                    <tr className="bg-zinc-900 text-gold-400 border-b border-zinc-800 text-[11px] uppercase">
+                    <tr className="bg-gray-50 text-blue-600 border-b border-gray-200 text-[11px] uppercase">
                       <th className="p-3.5">Timestamp</th>
                       <th className="p-3.5">Admin Staff</th>
                       <th className="p-3.5">Governance Action</th>
@@ -823,17 +823,17 @@ export const OrgAdminDashboard: React.FC = () => {
                       <th className="p-3.5 text-right">Origin IP</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-zinc-800/60 bg-black/40">
+                  <tbody className="divide-y divide-zinc-800/60 bg-white">
                     {auditLogs.map((log) => (
-                      <tr key={log._id} className="hover:bg-zinc-900/40">
-                        <td className="p-3.5 text-silver-300 font-semibold whitespace-nowrap">
+                      <tr key={log._id} className="hover:bg-gray-50">
+                        <td className="p-3.5 text-gray-600 font-semibold whitespace-nowrap">
                           {new Date(log.createdAt || Date.now()).toLocaleString()}
                         </td>
-                        <td className="p-3.5 font-bold text-white">
+                        <td className="p-3.5 font-bold text-gray-900">
                           {log.userId?.name || log.userRole || "Administrator"} <span className="text-[10px] text-zinc-400 font-normal">({log.userId?.email || "system"})</span>
                         </td>
                         <td className="p-3.5">
-                          <span className="px-2 py-0.5 rounded bg-gold-500/20 text-gold-300 font-bold text-[10px]">
+                          <span className="px-2 py-0.5 rounded bg-blue-600 text-gold-300 font-bold text-[10px]">
                             {log.action}
                           </span>
                         </td>
@@ -855,68 +855,68 @@ export const OrgAdminDashboard: React.FC = () => {
           <GlassCard title="Enterprise Telemetry Analytics & Export" subtitle="Filter trip history, analyze On-Time Performance (%), and download institutional reports">
             {/* KPI Executive Bar - Extended Fleet Utilization Metrics */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
-              <div className="p-4 rounded-xl bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 shadow-md">
-                <div className="flex items-center justify-between text-silver-400 mb-1">
+              <div className="p-4 rounded-xl bg-gradient-to-br from-white to-zinc-950 border border-gray-200 shadow-md">
+                <div className="flex items-center justify-between text-gray-500 mb-1">
                   <span className="text-[11px] uppercase font-semibold">Total Trips</span>
-                  <Navigation size={17} className="text-gold-400" />
+                  <Navigation size={17} className="text-blue-600" />
                 </div>
-                <p className="text-2xl font-extrabold text-white">{analytics.kpis?.totalTrips || 0}</p>
+                <p className="text-2xl font-extrabold text-gray-900">{analytics.kpis?.totalTrips || 0}</p>
                 <p className="text-[10px] text-emerald-400 font-semibold mt-1">✓ Live telemetry sync</p>
               </div>
-              <div className="p-4 rounded-xl bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 shadow-md">
-                <div className="flex items-center justify-between text-silver-400 mb-1">
+              <div className="p-4 rounded-xl bg-gradient-to-br from-white to-zinc-950 border border-gray-200 shadow-md">
+                <div className="flex items-center justify-between text-gray-500 mb-1">
                   <span className="text-[11px] uppercase font-semibold">On-Time %</span>
                   <Clock size={17} className="text-emerald-400" />
                 </div>
                 <p className="text-2xl font-extrabold text-emerald-400">{analytics.kpis?.avgOnTimePercentage !== undefined ? `${analytics.kpis.avgOnTimePercentage}%` : "0%"}</p>
-                <p className="text-[10px] text-silver-400 mt-1">Schedule adherence rate</p>
+                <p className="text-[10px] text-gray-500 mt-1">Schedule adherence rate</p>
               </div>
-              <div className="p-4 rounded-xl bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 shadow-md">
-                <div className="flex items-center justify-between text-silver-400 mb-1">
+              <div className="p-4 rounded-xl bg-gradient-to-br from-white to-zinc-950 border border-gray-200 shadow-md">
+                <div className="flex items-center justify-between text-gray-500 mb-1">
                   <span className="text-[11px] uppercase font-semibold">Total Distance</span>
                   <BarChart3 size={17} className="text-amber-400" />
                 </div>
-                <p className="text-2xl font-extrabold text-amber-400">{analytics.kpis?.totalDistanceKm || 0} <span className="text-xs font-normal text-silver-400">km</span></p>
-                <p className="text-[10px] text-silver-400 mt-1">GPS odometer aggregated</p>
+                <p className="text-2xl font-extrabold text-amber-400">{analytics.kpis?.totalDistanceKm || 0} <span className="text-xs font-normal text-gray-500">km</span></p>
+                <p className="text-[10px] text-gray-500 mt-1">GPS odometer aggregated</p>
               </div>
-              <div className="p-4 rounded-xl bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 shadow-md">
-                <div className="flex items-center justify-between text-silver-400 mb-1">
+              <div className="p-4 rounded-xl bg-gradient-to-br from-white to-zinc-950 border border-gray-200 shadow-md">
+                <div className="flex items-center justify-between text-gray-500 mb-1">
                   <span className="text-[11px] uppercase font-semibold">Avg Speed</span>
-                  <CheckCircle2 size={17} className="text-gold-400" />
+                  <CheckCircle2 size={17} className="text-blue-600" />
                 </div>
-                <p className="text-2xl font-extrabold text-gold-400">{analytics.kpis?.avgSpeedKmh || 0} <span className="text-xs font-normal text-silver-400">km/h</span></p>
-                <p className="text-[10px] text-silver-400 mt-1">Campus speed limit: 40km/h</p>
+                <p className="text-2xl font-extrabold text-blue-600">{analytics.kpis?.avgSpeedKmh || 0} <span className="text-xs font-normal text-gray-500">km/h</span></p>
+                <p className="text-[10px] text-gray-500 mt-1">Campus speed limit: 40km/h</p>
               </div>
-              <div className="p-4 rounded-xl bg-gradient-to-br from-zinc-900/90 to-amber-500/10 border border-amber-500/30 shadow-md">
-                <div className="flex items-center justify-between text-silver-400 mb-1">
+              <div className="p-4 rounded-xl bg-gradient-to-br from-white/90 to-amber-500/10 border border-amber-500/30 shadow-md">
+                <div className="flex items-center justify-between text-gray-500 mb-1">
                   <span className="text-[11px] uppercase font-bold text-amber-300">Fleet Utilization</span>
                   <TrendingUp size={17} className="text-amber-400" />
                 </div>
                 <p className="text-2xl font-extrabold text-amber-300">{buses.length > 0 ? Math.round((buses.filter((b) => b.status !== "IDLE" && b.status !== "OFFLINE").length / buses.length) * 100) : (analytics.kpis?.fleetUtilizationPercentage || 0)}%</p>
-                <div className="w-full bg-zinc-800 h-1.5 rounded-full mt-2 overflow-hidden">
+                <div className="w-full bg-gray-100 h-1.5 rounded-full mt-2 overflow-hidden">
                   <div className="bg-gradient-to-r from-amber-500 to-gold-400 h-full" style={{ width: `${buses.length > 0 ? Math.round((buses.filter((b) => b.status !== "IDLE" && b.status !== "OFFLINE").length / buses.length) * 100) : (analytics.kpis?.fleetUtilizationPercentage || 0)}%` }} />
                 </div>
               </div>
-              <div className="p-4 rounded-xl bg-gradient-to-br from-zinc-900/90 to-red-500/10 border border-red-500/30 shadow-md">
-                <div className="flex items-center justify-between text-silver-400 mb-1">
+              <div className="p-4 rounded-xl bg-gradient-to-br from-white/90 to-red-500/10 border border-red-500/30 shadow-md">
+                <div className="flex items-center justify-between text-gray-500 mb-1">
                   <span className="text-[11px] uppercase font-bold text-rose-300">Idle / Fuel Added</span>
                   <Flame size={17} className="text-rose-400" />
                 </div>
-                <p className="text-xl font-extrabold text-white">{analytics.kpis?.totalIdleTimeMins || 0} <span className="text-xs font-normal text-silver-400">m idle</span></p>
+                <p className="text-xl font-extrabold text-gray-900">{analytics.kpis?.totalIdleTimeMins || 0} <span className="text-xs font-normal text-gray-500">m idle</span></p>
                 <p className="text-[11px] text-rose-400 font-semibold mt-1">⛽ {analytics.kpis?.totalFuelLiters || 0} L diesel logged</p>
               </div>
             </div>
 
             {/* Filter controls & export triggers */}
-            <div className="p-4 rounded-xl bg-zinc-900/90 border border-zinc-800 flex flex-wrap gap-4 items-center justify-between mb-6">
+            <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 flex flex-wrap gap-4 items-center justify-between mb-6">
               <div className="flex flex-wrap gap-3 items-center text-xs">
-                <span className="text-gold-400 font-bold flex items-center gap-1"><Filter size={15} /> Filters:</span>
+                <span className="text-blue-600 font-bold flex items-center gap-1"><Filter size={15} /> Filters:</span>
                 <div>
-                  <span className="text-silver-400 mr-1">Status:</span>
+                  <span className="text-gray-500 mr-1">Status:</span>
                   <select
                     value={filters.status}
                     onChange={(e) => setFilters({ ...filters, status: e.target.value })}
-                    className="p-1.5 bg-zinc-950 border border-zinc-800 rounded text-white font-semibold"
+                    className="p-1.5 bg-zinc-950 border border-gray-200 rounded text-gray-900 font-semibold"
                   >
                     <option value="">All Statuses</option>
                     <option value="ACTIVE">Active Transit</option>
@@ -924,26 +924,26 @@ export const OrgAdminDashboard: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <span className="text-silver-400 mr-1">From:</span>
+                  <span className="text-gray-500 mr-1">From:</span>
                   <input
                     type="date"
                     value={filters.startDate}
                     onChange={(e) => setFilters({ ...filters, startDate: e.target.value })}
-                    className="p-1 bg-zinc-950 border border-zinc-800 rounded text-white"
+                    className="p-1 bg-zinc-950 border border-gray-200 rounded text-gray-900"
                   />
                 </div>
                 <div>
-                  <span className="text-silver-400 mr-1">To:</span>
+                  <span className="text-gray-500 mr-1">To:</span>
                   <input
                     type="date"
                     value={filters.endDate}
                     onChange={(e) => setFilters({ ...filters, endDate: e.target.value })}
-                    className="p-1 bg-zinc-950 border border-zinc-800 rounded text-white"
+                    className="p-1 bg-zinc-950 border border-gray-200 rounded text-gray-900"
                   />
                 </div>
                 <button
                   onClick={fetchAnalytics}
-                  className="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 text-white font-bold rounded border border-zinc-700 transition-all cursor-pointer"
+                  className="px-3 py-1.5 bg-gray-100 hover:bg-zinc-700 text-gray-900 font-bold rounded border border-gray-300 transition-all cursor-pointer"
                 >
                   Apply Filter
                 </button>
@@ -952,13 +952,13 @@ export const OrgAdminDashboard: React.FC = () => {
               <div className="flex gap-2">
                 <button
                   onClick={() => handleExportReport("pdf")}
-                  className="px-3 py-1.5 bg-rose-600 hover:bg-rose-500 text-white font-bold rounded-lg text-xs flex items-center gap-1.5 shadow-md cursor-pointer transition-all"
+                  className="px-3 py-1.5 bg-rose-600 hover:bg-rose-500 text-gray-900 font-bold rounded-lg text-xs flex items-center gap-1.5 shadow-md cursor-pointer transition-all"
                 >
                   <FileText size={15} /> Export PDF Report
                 </button>
                 <button
                   onClick={() => handleExportReport("xlsx")}
-                  className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg text-xs flex items-center gap-1.5 shadow-md cursor-pointer transition-all"
+                  className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-gray-900 font-bold rounded-lg text-xs flex items-center gap-1.5 shadow-md cursor-pointer transition-all"
                 >
                   <TableIcon size={15} /> Export Excel (.xlsx)
                 </button>
@@ -969,17 +969,17 @@ export const OrgAdminDashboard: React.FC = () => {
             <div className="mb-8">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <Award size={20} className="text-gold-400" />
-                  <h3 className="text-base font-extrabold text-white tracking-wide uppercase">Driver Workforce Performance & Safety Scorecard</h3>
+                  <Award size={20} className="text-blue-600" />
+                  <h3 className="text-base font-extrabold text-gray-900 tracking-wide uppercase">Driver Workforce Performance & Safety Scorecard</h3>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-silver-400 text-xs font-mono font-bold">
+                <span className="px-3 py-1 rounded-full bg-gray-50 border border-gray-200 text-gray-500 text-xs font-mono font-bold">
                   🛡️ Algorithmic Safety & Compliance Index
                 </span>
               </div>
-              <div className="overflow-x-auto rounded-xl border border-zinc-800 bg-black/60 shadow-lg">
+              <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-lg">
                 <table className="w-full text-left border-collapse text-xs">
                   <thead>
-                    <tr className="bg-zinc-900 border-b border-zinc-800 text-gold-400 uppercase tracking-wider font-extrabold text-[11px]">
+                    <tr className="bg-gray-50 border-b border-gray-200 text-blue-600 uppercase tracking-wider font-extrabold text-[11px]">
                       <th className="py-3 px-4">Driver Staff Member</th>
                       <th className="py-3 px-4">Performance Rank Badge</th>
                       <th className="py-3 px-4">Safety Compliance Score</th>
@@ -988,20 +988,20 @@ export const OrgAdminDashboard: React.FC = () => {
                       <th className="py-3 px-4">Avg Speed</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-zinc-800/60 text-silver-300">
+                  <tbody className="divide-y divide-zinc-800/60 text-gray-600">
                     {reportsLoading ? (
-                      <tr><td colSpan={6} className="py-6 text-center text-silver-400">Computing algorithm workforce performance indexes...</td></tr>
+                      <tr><td colSpan={6} className="py-6 text-center text-gray-500">Computing algorithm workforce performance indexes...</td></tr>
                     ) : !analytics.driverScores || analytics.driverScores.length === 0 ? (
-                      <tr><td colSpan={6} className="py-6 text-center text-silver-400 italic">No driver telemetry logged for this period.</td></tr>
+                      <tr><td colSpan={6} className="py-6 text-center text-gray-500 italic">No driver telemetry logged for this period.</td></tr>
                     ) : (
                       analytics.driverScores.map((d: any) => (
-                        <tr key={d.driverId || d.name} className="hover:bg-zinc-900/70 transition-colors font-semibold">
-                          <td className="py-3 px-4 font-bold text-white">
+                        <tr key={d.driverId || d.name} className="hover:bg-gray-50 transition-colors font-semibold">
+                          <td className="py-3 px-4 font-bold text-gray-900">
                             <div className="text-sm">{d.name}</div>
-                            <div className="text-[11px] font-mono text-silver-400 font-normal">{d.email}</div>
+                            <div className="text-[11px] font-mono text-gray-500 font-normal">{d.email}</div>
                           </td>
                           <td className="py-3 px-4">
-                            <span className="px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/40 text-gold-300 font-extrabold text-xs inline-block">
+                            <span className="px-3 py-1 rounded-full bg-blue-600 border border-gray-200 text-gold-300 font-extrabold text-xs inline-block">
                               {d.performanceBadge || "🌟 GOLD STAR DRIVER"}
                             </span>
                           </td>
@@ -1017,10 +1017,10 @@ export const OrgAdminDashboard: React.FC = () => {
                           <td className="py-3 px-4 font-mono font-extrabold text-emerald-400 text-sm">
                             {d.onTimePercentage !== undefined ? d.onTimePercentage : 0}%
                           </td>
-                          <td className="py-3 px-4 text-silver-300 font-mono">
-                            <span className="text-white font-bold">{d.totalDistanceKm || 0} km</span> ({d.totalTrips || 0} trips)
+                          <td className="py-3 px-4 text-gray-600 font-mono">
+                            <span className="text-gray-900 font-bold">{d.totalDistanceKm || 0} km</span> ({d.totalTrips || 0} trips)
                           </td>
-                          <td className="py-3 px-4 text-silver-300 font-mono">
+                          <td className="py-3 px-4 text-gray-600 font-mono">
                             {d.avgSpeedKmh || 0} km/h
                           </td>
                         </tr>
@@ -1032,10 +1032,10 @@ export const OrgAdminDashboard: React.FC = () => {
             </div>
 
             {/* Filtered Trip Records Table */}
-            <div className="overflow-x-auto rounded-xl border border-zinc-800">
+            <div className="overflow-x-auto rounded-xl border border-gray-200">
               <table className="w-full text-left border-collapse text-xs">
                 <thead>
-                  <tr className="bg-zinc-900 border-b border-zinc-800 text-gold-400 uppercase tracking-wider font-extrabold">
+                  <tr className="bg-gray-50 border-b border-gray-200 text-blue-600 uppercase tracking-wider font-extrabold">
                     <th className="py-3 px-4">Trip Session ID</th>
                     <th className="py-3 px-4">Bus / Route</th>
                     <th className="py-3 px-4">Driver</th>
@@ -1045,34 +1045,34 @@ export const OrgAdminDashboard: React.FC = () => {
                     <th className="py-3 px-4">Start Timestamp</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-zinc-800 text-silver-300">
+                <tbody className="divide-y divide-zinc-800 text-gray-600">
                   {reportsLoading ? (
-                    <tr><td colSpan={7} className="py-8 text-center text-silver-400 font-semibold">Analyzing telemetry & calculating variances...</td></tr>
+                    <tr><td colSpan={7} className="py-8 text-center text-gray-500 font-semibold">Analyzing telemetry & calculating variances...</td></tr>
                   ) : analytics.data?.length === 0 ? (
-                    <tr><td colSpan={7} className="py-8 text-center text-silver-400 italic">No historical trips match the active filter parameters.</td></tr>
+                    <tr><td colSpan={7} className="py-8 text-center text-gray-500 italic">No historical trips match the active filter parameters.</td></tr>
                   ) : (
                     analytics.data?.map((trip: any) => (
-                      <tr key={trip._id} className="hover:bg-zinc-900/50 transition-colors font-medium">
-                        <td className="py-3 px-4 font-mono font-bold text-white uppercase">{trip._id.slice(-6)}</td>
+                      <tr key={trip._id} className="hover:bg-gray-50 transition-colors font-medium">
+                        <td className="py-3 px-4 font-mono font-bold text-gray-900 uppercase">{trip._id.slice(-6)}</td>
                         <td className="py-3 px-4">
-                          <span className="font-bold text-white block">{trip.busId?.busNumber || "N/A"}</span>
-                          <span className="text-[10px] text-gold-400 font-mono">{trip.routeId?.name || "Unassigned Route"}</span>
+                          <span className="font-bold text-gray-900 block">{trip.busId?.busNumber || "N/A"}</span>
+                          <span className="text-[10px] text-blue-600 font-mono">{trip.routeId?.name || "Unassigned Route"}</span>
                         </td>
-                        <td className="py-3 px-4 text-white font-semibold">{trip.driverId?.name || "Staff Driver"}</td>
+                        <td className="py-3 px-4 text-gray-900 font-semibold">{trip.driverId?.name || "Staff Driver"}</td>
                         <td className="py-3 px-4 font-mono font-bold text-emerald-400">
                           {trip.onTimePercentage !== undefined ? `${trip.onTimePercentage}%` : "100%"}
                         </td>
-                        <td className="py-3 px-4 text-silver-300 font-mono">
+                        <td className="py-3 px-4 text-gray-600 font-mono">
                           {trip.distanceCoveredKm || 0} km | ~{trip.averageSpeedKmh || 25} km/h
                         </td>
                         <td className="py-3 px-4">
                           <span className={`px-2 py-0.5 rounded text-[10px] uppercase font-bold ${
-                            trip.status === "ACTIVE" ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-zinc-800 text-gray-400"
+                            trip.status === "ACTIVE" ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-gray-100 text-gray-600"
                           }`}>
                             {trip.status}
                           </span>
                         </td>
-                        <td className="py-3 px-4 text-silver-400 text-[11px] font-mono">
+                        <td className="py-3 px-4 text-gray-500 text-[11px] font-mono">
                           {trip.startTime ? new Date(trip.startTime).toLocaleString() : "N/A"}
                         </td>
                       </tr>
@@ -1087,17 +1087,17 @@ export const OrgAdminDashboard: React.FC = () => {
 
       {/* QR Code Printable Windshield Card Dialog */}
       {selectedQR && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 bg-black/90 backdrop-blur-md overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 bg-white backdrop-blur-md overflow-y-auto">
           {/* Main Windshield Sticker Card (Exact Match to Design Reference) */}
           <div id="windshield-qr-card" className="bg-white border-[5px] border-black rounded-[2.2rem] p-6 max-w-[360px] w-full shadow-[0_25px_60px_rgba(0,0,0,0.7)] text-center text-black font-sans my-auto transition-all animate-in zoom-in-95 duration-200">
             
             {/* Top Bus + GPS Pin Icon Composition */}
             <div className="relative inline-block mx-auto mb-2">
-              <div className="p-2.5 bg-[#002868] text-white rounded-2xl shadow-md inline-flex items-center justify-center">
-                <Bus size={42} className="text-white" />
+              <div className="p-2.5 bg-[#002868] text-gray-900 rounded-2xl shadow-md inline-flex items-center justify-center">
+                <Bus size={42} className="text-gray-900" />
               </div>
-              <div className="absolute -bottom-1.5 -right-1.5 p-1.5 bg-[#003c96] text-white rounded-full border-[3px] border-white shadow-lg">
-                <MapPin size={18} className="fill-white text-white" />
+              <div className="absolute -bottom-1.5 -right-1.5 p-1.5 bg-[#003c96] text-gray-900 rounded-full border-[3px] border-white shadow-lg">
+                <MapPin size={18} className="fill-white text-gray-900" />
               </div>
             </div>
 
@@ -1118,12 +1118,12 @@ export const OrgAdminDashboard: React.FC = () => {
             {/* Pill Box 1: Bus Number */}
             <div className="mt-4 border-[2.5px] border-black rounded-2xl overflow-hidden bg-white shadow-sm flex items-center">
               <div className="flex items-center gap-3 pl-3.5 pr-2 py-2.5 flex-1 text-left">
-                <div className="p-2 bg-black text-white rounded-xl flex items-center justify-center shrink-0">
+                <div className="p-2 bg-white text-gray-900 rounded-xl flex items-center justify-center shrink-0">
                   <Bus size={22} />
                 </div>
                 <span className="font-bold text-black text-[15px] tracking-wide">Bus Number</span>
               </div>
-              <div className="w-[2px] h-10 bg-black/60 my-auto" />
+              <div className="w-[2px] h-10 bg-white my-auto" />
               <div className="px-4 py-2 text-center font-black text-[26px] text-[#003366] font-mono shrink-0 min-w-[105px]">
                 {selectedQR.busNumber}
               </div>
@@ -1132,29 +1132,29 @@ export const OrgAdminDashboard: React.FC = () => {
             {/* Pill Box 2: Route */}
             <div className="mt-2.5 border-[2.5px] border-black rounded-2xl overflow-hidden bg-white shadow-sm flex items-center">
               <div className="flex items-center gap-3 pl-3.5 pr-2 py-2.5 flex-1 text-left">
-                <div className="p-2 bg-black text-white rounded-xl flex items-center justify-center shrink-0">
+                <div className="p-2 bg-white text-gray-900 rounded-xl flex items-center justify-center shrink-0">
                   <RouteIcon size={22} />
                 </div>
                 <span className="font-bold text-black text-[15px] tracking-wide">Route</span>
               </div>
-              <div className="w-[2px] h-10 bg-black/60 my-auto" />
+              <div className="w-[2px] h-10 bg-white my-auto" />
               <div className="px-3 py-2 text-center font-black text-xl text-[#003366] font-mono shrink-0 min-w-[105px] truncate">
                 {selectedQR.route || selectedQR.registrationPlate || "R12"}
               </div>
             </div>
 
             {/* Pill Box 3: Scan Call to Action Banner */}
-            <div className="mt-3 py-3.5 px-4 bg-[#07193a] rounded-2xl flex items-center justify-center gap-3 text-white shadow-lg">
+            <div className="mt-3 py-3.5 px-4 bg-[#07193a] rounded-2xl flex items-center justify-center gap-3 text-gray-900 shadow-lg">
               <div className="p-1 border border-white/50 rounded-lg shrink-0 flex items-center justify-center">
-                <QrCode size={20} className="text-white animate-pulse" />
+                <QrCode size={20} className="text-gray-900 animate-pulse" />
               </div>
-              <span className="font-extrabold text-[17px] tracking-wide text-white uppercase">Scan Before Every Trip</span>
+              <span className="font-extrabold text-[17px] tracking-wide text-gray-900 uppercase">Scan Before Every Trip</span>
             </div>
 
             {/* Brand Identity & Logo Footer */}
             <div className="mt-4 pt-3 border-t-2 border-zinc-200 flex flex-col items-center justify-center text-center">
               <div className="flex items-center justify-center gap-2 mb-0.5">
-                <img src="/rit-logo.png" alt="MTRX Brand Logo" className="w-5 h-5 object-cover rounded-md shadow-sm border border-black/20" />
+                
                 <span className="font-black text-[12px] uppercase tracking-widest text-[#07193a]">DEVELOPED BY RIT</span>
               </div>
               <span className="text-[9px] font-extrabold text-zinc-500 uppercase tracking-wider"></span>
@@ -1165,13 +1165,13 @@ export const OrgAdminDashboard: React.FC = () => {
           <div className="mt-5 flex gap-4 justify-center w-full max-w-[360px] pb-4">
             <button
               onClick={() => setSelectedQR(null)}
-              className="flex-1 py-3 px-4 bg-zinc-800 hover:bg-zinc-700 text-white font-extrabold rounded-2xl text-xs transition-all cursor-pointer border border-zinc-700 shadow-xl uppercase tracking-wider"
+              className="flex-1 py-3 px-4 bg-gray-100 hover:bg-zinc-700 text-gray-900 font-extrabold rounded-2xl text-xs transition-all cursor-pointer border border-gray-300 shadow-sm uppercase tracking-wider"
             >
               Close Dialog
             </button>
             <button
               onClick={handleDownloadFullSticker}
-              className="flex-1 py-3 px-4 bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 hover:brightness-110 text-black font-extrabold rounded-2xl text-xs transition-all flex items-center justify-center gap-2 shadow-gold cursor-pointer uppercase tracking-wider"
+              className="flex-1 py-3 px-4 bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 hover:brightness-110 text-black font-extrabold rounded-2xl text-xs transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer uppercase tracking-wider"
             >
               <Download size={15} /> Download Card PNG
             </button>
@@ -1181,41 +1181,41 @@ export const OrgAdminDashboard: React.FC = () => {
 
       {/* New Bus Modal */}
       {showNewBusModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
-          <div className="bg-[#141414] border border-gold-500/30 rounded-2xl p-6 max-w-md w-full">
-            <h3 className="text-lg font-bold text-white mb-4">Enroll New Bus Vehicle</h3>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white backdrop-blur-sm">
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 max-w-md w-full">
+            <h3 className="text-lg font-bold text-gray-900 mb-4">Enroll New Bus Vehicle</h3>
             <form onSubmit={handleAddBus} className="space-y-3 text-sm">
               <div>
-                <label className="block text-xs text-silver-300 mb-1">Bus Number / Alias</label>
+                <label className="block text-xs text-gray-600 mb-1">Bus Number / Alias</label>
                 <input
                   type="text"
                   required
                   placeholder="RIT-BUS-02"
                   value={newBusForm.busNumber}
                   onChange={(e) => setNewBusForm({ ...newBusForm, busNumber: e.target.value })}
-                  className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-lg text-white"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-lg text-gray-900"
                 />
               </div>
               <div>
-                <label className="block text-xs text-silver-300 mb-1">Registration License Plate</label>
+                <label className="block text-xs text-gray-600 mb-1">Registration License Plate</label>
                 <input
                   type="text"
                   required
                   placeholder="TN-67-AP-3000"
                   value={newBusForm.registrationPlate}
                   onChange={(e) => setNewBusForm({ ...newBusForm, registrationPlate: e.target.value })}
-                  className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-lg text-white uppercase font-mono"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 uppercase font-mono"
                 />
               </div>
-              <div className="pt-3 border-t border-zinc-800 flex justify-end gap-3">
+              <div className="pt-3 border-t border-gray-200 flex justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => setShowNewBusModal(false)}
-                  className="px-4 py-2 bg-zinc-800 rounded-lg text-white font-semibold cursor-pointer"
+                  className="px-4 py-2 bg-gray-100 rounded-lg text-gray-900 font-semibold cursor-pointer"
                 >
                   Cancel
                 </button>
-                <button type="submit" className="px-4 py-2 bg-gold-500 text-black font-bold rounded-lg cursor-pointer">
+                <button type="submit" className="px-4 py-2 bg-blue-600 text-black font-bold rounded-lg cursor-pointer">
                   Enroll Vehicle
                 </button>
               </div>
@@ -1226,61 +1226,61 @@ export const OrgAdminDashboard: React.FC = () => {
 
       {/* Define New Route Schedule Modal */}
       {showNewRouteModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
-          <div className="bg-[#141414] border border-gold-500/50 rounded-2xl p-6 max-w-lg w-full shadow-2xl">
-            <h3 className="text-lg font-bold text-white mb-1">Configure Route Schedule & Stops</h3>
-            <p className="text-xs text-gold-400 mb-4">Define ordered stops and estimated transit durations</p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white backdrop-blur-sm">
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 max-w-lg w-full shadow-md">
+            <h3 className="text-lg font-bold text-gray-900 mb-1">Configure Route Schedule & Stops</h3>
+            <p className="text-xs text-blue-600 mb-4">Define ordered stops and estimated transit durations</p>
             <form onSubmit={handleCreateRoute} className="space-y-4 text-sm">
               <div className="grid grid-cols-3 gap-3">
                 <div className="col-span-2">
-                  <label className="block text-xs font-semibold text-silver-300 mb-1">Route Name</label>
+                  <label className="block text-xs font-semibold text-gray-600 mb-1">Route Name</label>
                   <input
                     type="text"
                     required
                     placeholder="Campus Core to City Terminus"
                     value={newRouteForm.name}
                     onChange={(e) => setNewRouteForm({ ...newRouteForm, name: e.target.value })}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-lg text-white font-medium"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 font-medium"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-silver-300 mb-1">Route Code</label>
+                  <label className="block text-xs font-semibold text-gray-600 mb-1">Route Code</label>
                   <input
                     type="text"
                     required
                     placeholder="RIT-R1"
                     value={newRouteForm.routeCode}
                     onChange={(e) => setNewRouteForm({ ...newRouteForm, routeCode: e.target.value.toUpperCase() })}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-lg text-white font-mono uppercase font-bold"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 font-mono uppercase font-bold"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-semibold text-silver-300 mb-1">Estimated Transit Duration (Minutes)</label>
+                <label className="block text-xs font-semibold text-gray-600 mb-1">Estimated Transit Duration (Minutes)</label>
                 <input
                   type="number"
                   min={5}
                   required
                   value={newRouteForm.estimatedDurationMins}
                   onChange={(e) => setNewRouteForm({ ...newRouteForm, estimatedDurationMins: parseInt(e.target.value) || 45 })}
-                  className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-lg text-white"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-lg text-gray-900"
                 />
               </div>
-              <div className="p-3 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-2">
-                <span className="text-xs font-bold text-gold-400 uppercase">Configured Stop Sequence (2 Default Waypoints)</span>
-                <p className="text-[11px] text-silver-400 leading-relaxed">
+              <div className="p-3 rounded-xl bg-gray-50 border border-gray-200 space-y-2">
+                <span className="text-xs font-bold text-blue-600 uppercase">Configured Stop Sequence (2 Default Waypoints)</span>
+                <p className="text-[11px] text-gray-500 leading-relaxed">
                   Stops are initialized with GPS radii and automated time buffer tracking (+0 mins Departure, +25 mins Terminal Arrival). Further stops can be appended dynamically.
                 </p>
               </div>
-              <div className="pt-3 border-t border-zinc-800 flex justify-end gap-3">
+              <div className="pt-3 border-t border-gray-200 flex justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => setShowNewRouteModal(false)}
-                  className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-white font-semibold text-xs cursor-pointer"
+                  className="px-4 py-2 bg-gray-100 hover:bg-zinc-700 rounded-lg text-gray-900 font-semibold text-xs cursor-pointer"
                 >
                   Cancel
                 </button>
-                <button type="submit" className="px-4 py-2 bg-gold-500 hover:bg-gold-400 text-black font-bold rounded-lg text-xs cursor-pointer">
+                <button type="submit" className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-black font-bold rounded-lg text-xs cursor-pointer">
                   Save Transit Route
                 </button>
               </div>
@@ -1291,25 +1291,25 @@ export const OrgAdminDashboard: React.FC = () => {
 
       {/* Subscription Tier Upgrade Prompt Modal */}
       {showUpgradePrompt && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="bg-[#141414] border border-amber-500/60 rounded-2xl p-6 max-w-md w-full shadow-2xl text-center relative">
-            <div className="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center mx-auto mb-3 border border-gold-500/40 font-bold text-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white backdrop-blur-md">
+          <div className="bg-gray-50 border border-amber-500/60 rounded-2xl p-6 max-w-md w-full shadow-md text-center relative">
+            <div className="w-12 h-12 rounded-full bg-blue-600 text-blue-600 flex items-center justify-center mx-auto mb-3 border border-gray-200 font-bold text-2xl">
               🚀
             </div>
-            <h3 className="text-xl font-extrabold text-white">Subscription Upgrade Required</h3>
-            <p className="text-xs font-semibold text-gold-400 mt-1 uppercase tracking-wider">RIT Enterprise Scaling</p>
+            <h3 className="text-xl font-extrabold text-gray-900">Subscription Upgrade Required</h3>
+            <p className="text-xs font-semibold text-blue-600 mt-1 uppercase tracking-wider">RIT Enterprise Scaling</p>
             
-            <div className="my-4 p-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-silver-300 text-xs text-left leading-relaxed">
+            <div className="my-4 p-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-600 text-xs text-left leading-relaxed">
               <p>{showUpgradePrompt}</p>
             </div>
 
-            <p className="text-[11px] text-silver-400 mb-6">
+            <p className="text-[11px] text-gray-500 mb-6">
               To expand your active bus fleet or allocate more administration seats, please contact RIT Executive Support () for instant quota adjustment.
             </p>
 
             <button
               onClick={() => setShowUpgradePrompt(null)}
-              className="w-full py-3 bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 hover:from-gold-400 hover:to-gold-600 text-black font-bold rounded-xl text-sm transition-all shadow-gold uppercase tracking-wider cursor-pointer"
+              className="w-full py-3 bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 hover:from-gold-400 hover:to-gold-600 text-black font-bold rounded-xl text-sm transition-all shadow-sm uppercase tracking-wider cursor-pointer"
             >
               Understand & Close
             </button>
@@ -1319,24 +1319,24 @@ export const OrgAdminDashboard: React.FC = () => {
 
       {/* DRIVER SHIFT ASSIGNMENT MODAL */}
       {selectedDriverForShift && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="w-full max-w-lg bg-zinc-950 border border-gold-500/50 rounded-2xl p-6 shadow-2xl space-y-5 animate-in zoom-in-95 duration-200">
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-              <div className="flex items-center gap-2 text-gold-400 font-extrabold text-base">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white backdrop-blur-md">
+          <div className="w-full max-w-lg bg-zinc-950 border border-gray-200 rounded-2xl p-6 shadow-md space-y-5 animate-in zoom-in-95 duration-200">
+            <div className="flex items-center justify-between pb-3 border-b border-gray-200">
+              <div className="flex items-center gap-2 text-blue-600 font-extrabold text-base">
                 <Settings size={20} /> Assign Shift & Duty: {selectedDriverForShift.name}
               </div>
-              <button onClick={() => setSelectedDriverForShift(null)} className="text-zinc-400 hover:text-white p-1">
+              <button onClick={() => setSelectedDriverForShift(null)} className="text-zinc-400 hover:text-gray-900 p-1">
                 <X size={20} />
               </button>
             </div>
 
             <form onSubmit={handleAssignDriverShift} className="space-y-4 text-xs">
               <div>
-                <label className="block text-silver-300 font-semibold mb-1">Assign Transit Vehicle:</label>
+                <label className="block text-gray-600 font-semibold mb-1">Assign Transit Vehicle:</label>
                 <select
                   value={shiftForm.assignedBusId}
                   onChange={(e) => setShiftForm({ ...shiftForm, assignedBusId: e.target.value })}
-                  className="w-full p-2.5 bg-zinc-900 border border-zinc-700 rounded-lg text-white font-bold focus:outline-none focus:ring-1 focus:ring-gold-500"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 font-bold focus:outline-none focus:ring-1 focus:ring-gold-500"
                 >
                   <option value="">-- No Vehicle Assigned (Pool Float) --</option>
                   {buses.map((b) => (
@@ -1348,11 +1348,11 @@ export const OrgAdminDashboard: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-silver-300 font-semibold mb-1">Assign Destination Transit Route:</label>
+                <label className="block text-gray-600 font-semibold mb-1">Assign Destination Transit Route:</label>
                 <select
                   value={shiftForm.assignedRouteId}
                   onChange={(e) => setShiftForm({ ...shiftForm, assignedRouteId: e.target.value })}
-                  className="w-full p-2.5 bg-zinc-900 border border-zinc-700 rounded-lg text-white font-bold focus:outline-none focus:ring-1 focus:ring-gold-500"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 font-bold focus:outline-none focus:ring-1 focus:ring-gold-500"
                 >
                   <option value="">-- Flexible / Any Route --</option>
                   {routes.map((r) => (
@@ -1365,11 +1365,11 @@ export const OrgAdminDashboard: React.FC = () => {
 
               <div className="grid grid-cols-3 gap-3">
                 <div>
-                  <label className="block text-silver-300 font-semibold mb-1">Shift Type:</label>
+                  <label className="block text-gray-600 font-semibold mb-1">Shift Type:</label>
                   <select
                     value={shiftForm.shiftType}
                     onChange={(e) => setShiftForm({ ...shiftForm, shiftType: e.target.value })}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-700 rounded-lg text-gold-400 font-bold"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-300 rounded-lg text-blue-600 font-bold"
                   >
                     <option value="MORNING">Morning Shift</option>
                     <option value="EVENING">Evening Shift</option>
@@ -1378,21 +1378,21 @@ export const OrgAdminDashboard: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-silver-300 font-semibold mb-1">Shift Start:</label>
+                  <label className="block text-gray-600 font-semibold mb-1">Shift Start:</label>
                   <input
                     type="text"
                     value={shiftForm.shiftStart}
                     onChange={(e) => setShiftForm({ ...shiftForm, shiftStart: e.target.value })}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-700 rounded-lg text-white font-mono"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 font-mono"
                   />
                 </div>
                 <div>
-                  <label className="block text-silver-300 font-semibold mb-1">Shift End:</label>
+                  <label className="block text-gray-600 font-semibold mb-1">Shift End:</label>
                   <input
                     type="text"
                     value={shiftForm.shiftEnd}
                     onChange={(e) => setShiftForm({ ...shiftForm, shiftEnd: e.target.value })}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-700 rounded-lg text-white font-mono"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 font-mono"
                   />
                 </div>
               </div>
@@ -1406,13 +1406,13 @@ export const OrgAdminDashboard: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setSelectedDriverForShift(null)}
-                  className="px-5 py-2.5 rounded-xl bg-zinc-800 text-zinc-300 hover:bg-zinc-700 font-bold"
+                  className="px-5 py-2.5 rounded-xl bg-gray-100 text-zinc-300 hover:bg-zinc-700 font-bold"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:brightness-110 text-black font-extrabold uppercase tracking-wider shadow-gold"
+                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:brightness-110 text-black font-extrabold uppercase tracking-wider shadow-sm"
                 >
                   Confirm & Inscribe Audit Log
                 </button>
@@ -1424,27 +1424,27 @@ export const OrgAdminDashboard: React.FC = () => {
 
       {/* BULK CSV ONBOARDING MODAL */}
       {showCSVModal.isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="w-full max-w-xl bg-zinc-950 border border-gold-500/50 rounded-2xl p-6 shadow-2xl space-y-5 animate-in zoom-in-95 duration-200">
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-              <div className="flex items-center gap-2 text-gold-400 font-extrabold text-base">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white backdrop-blur-md">
+          <div className="w-full max-w-xl bg-zinc-950 border border-gray-200 rounded-2xl p-6 shadow-md space-y-5 animate-in zoom-in-95 duration-200">
+            <div className="flex items-center justify-between pb-3 border-b border-gray-200">
+              <div className="flex items-center gap-2 text-blue-600 font-extrabold text-base">
                 <Upload size={20} /> Bulk CSV Onboarding ({showCSVModal.type === "drivers" ? "Staff Drivers" : "Transit Fleet"})
               </div>
-              <button onClick={() => setShowCSVModal({ isOpen: false, type: "drivers" })} className="text-zinc-400 hover:text-white p-1">
+              <button onClick={() => setShowCSVModal({ isOpen: false, type: "drivers" })} className="text-zinc-400 hover:text-gray-900 p-1">
                 <X size={20} />
               </button>
             </div>
 
             <form onSubmit={handleBulkCSVImport} className="space-y-4 text-xs">
-              <div className="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-silver-300 space-y-2">
-                <span className="font-bold text-white block">Required CSV Row Formatting (One record per line):</span>
+              <div className="p-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-600 space-y-2">
+                <span className="font-bold text-gray-900 block">Required CSV Row Formatting (One record per line):</span>
                 {showCSVModal.type === "drivers" ? (
-                  <p className="font-mono text-[11px] text-gold-400">
+                  <p className="font-mono text-[11px] text-blue-600">
                     Name, Email, Phone Number, Shift Type (MORNING/EVENING/FULL_DAY)<br />
                     <span className="text-zinc-400">e.g., Ramesh Kumar, ramesh@college.edu, +91944300001, MORNING</span>
                   </p>
                 ) : (
-                  <p className="font-mono text-[11px] text-gold-400">
+                  <p className="font-mono text-[11px] text-blue-600">
                     Bus Number, Registration Plate, Passenger Capacity<br />
                     <span className="text-zinc-400">e.g., CAMPUS EXPRESS 10, TN-67-MTRX-500, 48</span>
                   </p>
@@ -1452,14 +1452,14 @@ export const OrgAdminDashboard: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-silver-300 font-semibold mb-1">Paste CSV Contents Below:</label>
+                <label className="block text-gray-600 font-semibold mb-1">Paste CSV Contents Below:</label>
                 <textarea
                   rows={7}
                   required
                   placeholder={showCSVModal.type === "drivers" ? "Ramesh Kumar, ramesh@college.edu, +91900010001, MORNING\nSuresh V, suresh@college.edu, +91900010002, EVENING" : "RIT BUS 01, TN-67-MTRX-101, 45\nRIT BUS 02, TN-67-MTRX-102, 50"}
                   value={csvInput}
                   onChange={(e) => setCsvInput(e.target.value)}
-                  className="w-full p-3 bg-zinc-900 border border-zinc-700 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-gold-500 leading-relaxed"
+                  className="w-full p-3 bg-gray-50 border border-gray-300 rounded-xl text-gray-900 font-mono text-xs focus:outline-none focus:border-gray-200 leading-relaxed"
                 />
               </div>
 
@@ -1467,14 +1467,14 @@ export const OrgAdminDashboard: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setShowCSVModal({ isOpen: false, type: "drivers" })}
-                  className="px-5 py-2.5 rounded-xl bg-zinc-800 text-zinc-300 hover:bg-zinc-700 font-bold"
+                  className="px-5 py-2.5 rounded-xl bg-gray-100 text-zinc-300 hover:bg-zinc-700 font-bold"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={csvImporting}
-                  className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 hover:brightness-110 text-black font-extrabold uppercase tracking-wider shadow-gold flex items-center gap-2"
+                  className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 hover:brightness-110 text-black font-extrabold uppercase tracking-wider shadow-sm flex items-center gap-2"
                 >
                   <CheckCircle2 size={16} /> {csvImporting ? "Processing Batch..." : "Execute Bulk Import"}
                 </button>
@@ -1486,62 +1486,62 @@ export const OrgAdminDashboard: React.FC = () => {
 
       {/* MANUAL SINGLE DRIVER ONBOARDING MODAL */}
       {showNewDriverModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="bg-[#141414] border-2 border-gold-500/40 rounded-2xl p-6 max-w-lg w-full shadow-2xl shadow-gold-500/10 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-              <div className="flex items-center gap-2 text-gold-400 font-extrabold text-base">
-                <UserCheck size={20} className="text-gold-500" /> Enroll Single Driver Account
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white backdrop-blur-md animate-in fade-in duration-200">
+          <div className="bg-gray-50 border-2 border-gray-200 rounded-2xl p-6 max-w-lg w-full shadow-md shadow-sm space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-gray-200">
+              <div className="flex items-center gap-2 text-blue-600 font-extrabold text-base">
+                <UserCheck size={20} className="text-blue-700" /> Enroll Single Driver Account
               </div>
-              <button onClick={() => setShowNewDriverModal(false)} className="text-zinc-400 hover:text-white">
+              <button onClick={() => setShowNewDriverModal(false)} className="text-zinc-400 hover:text-gray-900">
                 <X size={18} />
               </button>
             </div>
-            <p className="text-xs text-silver-300 leading-relaxed">
+            <p className="text-xs text-gray-600 leading-relaxed">
               Enrolled transit staff automatically receive secure credentials with mandatory password replacement enabled on first sign-in.
             </p>
             <form onSubmit={handleCreateDriver} className="space-y-4 text-xs">
               <div>
-                <label className="block text-silver-300 font-medium mb-1">Driver Full Name</label>
+                <label className="block text-gray-600 font-medium mb-1">Driver Full Name</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g., MANOJ KUMAR S"
                   value={newDriverForm.name}
                   onChange={(e) => setNewDriverForm({ ...newDriverForm, name: e.target.value })}
-                  className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-white focus:border-gold-500 transition-colors"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:border-gray-200 transition-colors"
                 />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-silver-300 font-medium mb-1">Login Email Address</label>
+                  <label className="block text-gray-600 font-medium mb-1">Login Email Address</label>
                   <input
                     type="email"
                     required
                     placeholder="driver@college.edu"
                     value={newDriverForm.email}
                     onChange={(e) => setNewDriverForm({ ...newDriverForm, email: e.target.value })}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-white focus:border-gold-500 transition-colors"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:border-gray-200 transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-silver-300 font-medium mb-1">Contact Phone</label>
+                  <label className="block text-gray-600 font-medium mb-1">Contact Phone</label>
                   <input
                     type="text"
                     required
                     placeholder="+91-9876543210"
                     value={newDriverForm.phone}
                     onChange={(e) => setNewDriverForm({ ...newDriverForm, phone: e.target.value })}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-white focus:border-gold-500 font-mono transition-colors"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:border-gray-200 font-mono transition-colors"
                   />
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-silver-300 font-medium mb-1">Initial Vehicle Assignment</label>
+                  <label className="block text-gray-600 font-medium mb-1">Initial Vehicle Assignment</label>
                   <select
                     value={newDriverForm.assignedBusId}
                     onChange={(e) => setNewDriverForm({ ...newDriverForm, assignedBusId: e.target.value })}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-white focus:border-gold-500 transition-colors"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:border-gray-200 transition-colors"
                   >
                     <option value="">-- No Bus Attached Yet --</option>
                     {buses.map((b) => (
@@ -1550,11 +1550,11 @@ export const OrgAdminDashboard: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-silver-300 font-medium mb-1">Operational Shift</label>
+                  <label className="block text-gray-600 font-medium mb-1">Operational Shift</label>
                   <select
                     value={newDriverForm.shiftType}
                     onChange={(e) => setNewDriverForm({ ...newDriverForm, shiftType: e.target.value })}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-white focus:border-gold-500 transition-colors font-bold text-amber-300"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:border-gray-200 transition-colors font-bold text-amber-300"
                   >
                     <option value="FULL_DAY">Full Day Duty (06:00 - 18:00)</option>
                     <option value="MORNING">Morning Shift (06:00 - 12:00)</option>
@@ -1566,14 +1566,14 @@ export const OrgAdminDashboard: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setShowNewDriverModal(false)}
-                  className="px-5 py-2.5 rounded-xl bg-zinc-800 text-zinc-300 hover:bg-zinc-700 font-bold"
+                  className="px-5 py-2.5 rounded-xl bg-gray-100 text-zinc-300 hover:bg-zinc-700 font-bold"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={driverCreating}
-                  className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black font-extrabold shadow-gold uppercase tracking-wider"
+                  className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black font-extrabold shadow-sm uppercase tracking-wider"
                 >
                   {driverCreating ? "Enrolling..." : "Create & Authorize Driver"}
                 </button>
@@ -1585,19 +1585,19 @@ export const OrgAdminDashboard: React.FC = () => {
 
       {/* CELEBRATORY DRIVER CREDENTIAL GENERATION MODAL */}
       {newDriverCreatedModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in zoom-in-95 duration-200">
-          <div className="bg-[#141414] border-2 border-emerald-500/50 rounded-3xl p-6 max-w-md w-full shadow-2xl space-y-4 text-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white backdrop-blur-md animate-in zoom-in-95 duration-200">
+          <div className="bg-gray-50 border-2 border-emerald-500/50 rounded-3xl p-6 max-w-md w-full shadow-md space-y-4 text-center">
             <div className="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto shadow-lg border border-emerald-500/30">
               <CheckCircle2 size={32} />
             </div>
-            <h3 className="text-xl font-extrabold text-white">Driver Account Enrolled!</h3>
-            <p className="text-xs text-silver-300">
-              Please share these initial login credentials with driver <span className="font-bold text-white">{newDriverCreatedModal.name}</span>. They will be prompted to change their password on first sign-in.
+            <h3 className="text-xl font-extrabold text-gray-900">Driver Account Enrolled!</h3>
+            <p className="text-xs text-gray-600">
+              Please share these initial login credentials with driver <span className="font-bold text-gray-900">{newDriverCreatedModal.name}</span>. They will be prompted to change their password on first sign-in.
             </p>
-            <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 text-left space-y-2 font-mono text-xs">
+            <div className="p-4 rounded-2xl bg-gray-50 border border-gray-200 text-left space-y-2 font-mono text-xs">
               <div>
                 <span className="text-zinc-400 block text-[10px]">DRIVER LOGIN EMAIL:</span>
-                <span className="text-white font-bold text-sm">{newDriverCreatedModal.email}</span>
+                <span className="text-gray-900 font-bold text-sm">{newDriverCreatedModal.email}</span>
               </div>
               <div>
                 <span className="text-zinc-400 block text-[10px]">INITIAL SECURITY PASSWORD:</span>

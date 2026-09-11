@@ -74,16 +74,16 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({ isOpen, onClose, m
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in">
-      <div className="bg-[#141414] border-2 border-gold-500/40 rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl shadow-gold-500/10 relative overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white backdrop-blur-md animate-fade-in">
+      <div className="bg-gray-50 border-2 border-gray-200 rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-md shadow-sm relative overflow-hidden">
         
         {/* Glow Effects */}
-        <div className="absolute top-0 right-0 w-40 h-40 bg-gold-500/10 rounded-full blur-[60px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-40 h-40 bg-blue-600 rounded-full blur-[60px] pointer-events-none" />
         
         {/* Close Button (if not strictly forced first login or allowing dismissal) */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full bg-zinc-900 text-silver-400 hover:text-white hover:bg-zinc-800 transition-colors z-10"
+          className="absolute top-5 right-5 p-2 rounded-full bg-gray-50 text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-colors z-10"
           title="Close modal"
         >
           <X size={18} />
@@ -91,16 +91,16 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({ isOpen, onClose, m
 
         {/* Modal Header */}
         <div className="text-center mb-6 flex flex-col items-center">
-          <div className="w-14 h-14 bg-gradient-to-tr from-gold-500 via-amber-600 to-gold-400 rounded-2xl flex items-center justify-center mb-3 shadow-gold">
+          <div className="w-14 h-14 bg-gradient-to-tr from-gold-500 via-amber-600 to-gold-400 rounded-2xl flex items-center justify-center mb-3 shadow-sm">
             {mode === "change" ? <Key className="w-7 h-7 text-black" /> : <ShieldCheck className="w-7 h-7 text-black" />}
           </div>
-          <h2 className="text-[11px] tracking-[0.25em] uppercase text-gold-400 font-bold mb-1 flex items-center gap-1">
-            <Sparkles size={12} className="text-gold-500" /> Enterprise Identity Security
+          <h2 className="text-[11px] tracking-[0.25em] uppercase text-blue-600 font-bold mb-1 flex items-center gap-1">
+            <Sparkles size={12} className="text-blue-700" /> Enterprise Identity Security
           </h2>
-          <h3 className="text-2xl font-bold text-white tracking-wide">
+          <h3 className="text-2xl font-bold text-gray-900 tracking-wide">
             {mode === "change" ? (isFirstLogin ? "Initial Login Security" : "Update Your Password") : "Reset Login Password"}
           </h3>
-          <p className="text-xs text-silver-400 mt-1">
+          <p className="text-xs text-gray-500 mt-1">
             {mode === "change"
               ? isFirstLogin
                 ? "Welcome! For institutional compliance, please replace your admin-assigned initial password with a personal secure key."
@@ -128,19 +128,19 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({ isOpen, onClose, m
             {mode === "reset" && (
               <>
                 <div>
-                  <label className="block text-xs text-silver-300 font-medium mb-1">Official Login Email</label>
+                  <label className="block text-xs text-gray-600 font-medium mb-1">Official Login Email</label>
                   <input
                     type="email"
                     required
                     placeholder="admin@college.edu or driver@rit.ac.in"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-white text-sm focus:border-gold-500 transition-colors"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 text-sm focus:border-gray-200 transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-silver-300 font-medium mb-1">
-                    Verification Identifier <span className="text-[10px] text-gold-400">(College Code / Phone / MTRX2026)</span>
+                  <label className="block text-xs text-gray-600 font-medium mb-1">
+                    Verification Identifier <span className="text-[10px] text-blue-600">(College Code / Phone / MTRX2026)</span>
                   </label>
                   <input
                     type="text"
@@ -148,10 +148,10 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({ isOpen, onClose, m
                     placeholder="e.g. RIT-CAMPUS or +91-9876543210"
                     value={verificationCode}
                     onChange={(e) => setVerificationCode(e.target.value)}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-white font-mono text-sm focus:border-gold-500 transition-colors"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 font-mono text-sm focus:border-gray-200 transition-colors"
                   />
-                  <p className="text-[10px] text-silver-400 mt-1">
-                    Super Admins can verify using recovery key <span className="text-gold-400 font-mono">MTRX2026</span>.
+                  <p className="text-[10px] text-gray-500 mt-1">
+                    Super Admins can verify using recovery key <span className="text-blue-600 font-mono">MTRX2026</span>.
                   </p>
                 </div>
               </>
@@ -159,7 +159,7 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({ isOpen, onClose, m
 
             {mode === "change" && !isFirstLogin && (
               <div>
-                <label className="block text-xs text-silver-300 font-medium mb-1">Current Password</label>
+                <label className="block text-xs text-gray-600 font-medium mb-1">Current Password</label>
                 <div className="relative">
                   <input
                     type="password"
@@ -167,34 +167,34 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({ isOpen, onClose, m
                     placeholder="Enter your current password"
                     value={currentPassword}
                     onChange={(e) => setCurrentPassword(e.target.value)}
-                    className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-white text-sm font-mono focus:border-gold-500 transition-colors"
+                    className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 text-sm font-mono focus:border-gray-200 transition-colors"
                   />
-                  <Lock className="absolute right-3 top-3 w-4 h-4 text-silver-400" />
+                  <Lock className="absolute right-3 top-3 w-4 h-4 text-gray-500" />
                 </div>
               </div>
             )}
 
             <div>
-              <label className="block text-xs text-silver-300 font-medium mb-1">New Security Password</label>
+              <label className="block text-xs text-gray-600 font-medium mb-1">New Security Password</label>
               <input
                 type="password"
                 required
                 placeholder="At least 6 characters"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-white text-sm font-mono focus:border-gold-500 transition-colors"
+                className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 text-sm font-mono focus:border-gray-200 transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs text-silver-300 font-medium mb-1">Confirm New Password</label>
+              <label className="block text-xs text-gray-600 font-medium mb-1">Confirm New Password</label>
               <input
                 type="password"
                 required
                 placeholder="Re-type new password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full p-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-white text-sm font-mono focus:border-gold-500 transition-colors"
+                className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 text-sm font-mono focus:border-gray-200 transition-colors"
               />
             </div>
 
@@ -202,7 +202,7 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({ isOpen, onClose, m
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black font-bold text-sm rounded-xl shadow-lg hover:shadow-gold-500/30 transition-all uppercase tracking-wide disabled:opacity-50"
+                className="w-full py-3 bg-gradient-to-r from-gold-500 via-amber-500 to-gold-400 text-black font-bold text-sm rounded-xl shadow-lg hover:shadow-sm transition-all uppercase tracking-wide disabled:opacity-50"
               >
                 {loading ? "Verifying Security & Encrypting..." : mode === "change" ? "Save & Apply Password" : "Reset & Activate Password"}
               </button>
@@ -211,7 +211,7 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({ isOpen, onClose, m
                 <button
                   type="button"
                   onClick={onClose}
-                  className="w-full py-2 text-xs text-silver-400 hover:text-white transition-colors"
+                  className="w-full py-2 text-xs text-gray-500 hover:text-gray-900 transition-colors"
                 >
                   Skip for this session (Continue with initial password)
                 </button>
